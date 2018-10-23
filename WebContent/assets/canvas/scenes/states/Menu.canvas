@@ -1,0 +1,84 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Menu",
+    "sceneWidth": 1024,
+    "sceneHeight": 768,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.State",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "scaleMode": "SHOW_ALL",
+    "pageAlignHorizontally": true,
+    "pageAlignVertically": true,
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "5cdfe9de-ac9c-45b4-99cb-249a88b991e3",
+    "info": {
+      "editorName": "Menu",
+      "setAll": [],
+      "children": [
+        {
+          "type": "image",
+          "id": "347594b2-3cf1-445a-bdd9-9940c88cb92c",
+          "asset": "0",
+          "info": {
+            "editorName": "colored_desert",
+            "x": -4,
+            "y": -4,
+            "scale.x": 1.0104976500063336,
+            "scale.y": 0.7569919450115183
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "0",
+          "id": "b32a83c6-c801-4015-b94c-af23cb5632d0",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "environments4",
+            "sprite": "elementStone015"
+          },
+          "info": {
+            "editorName": "elementStone",
+            "editorShow": false,
+            "x": 455,
+            "y": 234,
+            "callback": ""
+          }
+        }
+      ]
+    }
+  },
+  "type": "STATE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "level",
+    "asset": "colored_desert"
+  }},
+  "prefab-table": {"0": "WebContent/assets/canvas/prefabs/Button.canvas"}
+}

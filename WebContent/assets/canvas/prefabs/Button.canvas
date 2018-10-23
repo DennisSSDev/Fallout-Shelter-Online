@@ -1,0 +1,59 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Button",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.Button",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "24819350-0e57-4792-a641-f37fed92f8d3",
+    "info": {
+      "editorName": "Button",
+      "setAll": [],
+      "children": [{
+        "type": "button",
+        "id": "9796907a-c731-48a9-803a-1fad34e214b7",
+        "asset": "0",
+        "info": {
+          "editorName": "elementStone015",
+          "callback": "function() {this.game.state.start(\"Level\")}"
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "level",
+    "asset": "environments4",
+    "sprite": "elementStone015"
+  }},
+  "prefab-table": {}
+}

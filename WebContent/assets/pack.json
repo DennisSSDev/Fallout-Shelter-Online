@@ -1,41 +1,239 @@
 {
   "level": [
     {
+      "type": "spritesheet",
+      "key": "adventurer_tilesheet",
+      "url": "assets/sprites/Characters_SpriteSheet/Adventurer/adventurer_tilesheet.png",
+      "frameWidth": 80,
+      "frameHeight": 110,
+      "frameMax": 24,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "female_tilesheet",
+      "url": "assets/sprites/Characters_SpriteSheet/Female/female_tilesheet.png",
+      "frameWidth": 80,
+      "frameHeight": 110,
+      "frameMax": 24,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "player_tilesheet",
+      "url": "assets/sprites/Characters_SpriteSheet/Player/player_tilesheet.png",
+      "frameWidth": 80,
+      "frameHeight": 110,
+      "frameMax": 24,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "soldier_tilesheet",
+      "url": "assets/sprites/Characters_SpriteSheet/Soldier/soldier_tilesheet.png",
+      "frameWidth": 80,
+      "frameHeight": 110,
+      "frameMax": 24,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "zombie_tilesheet",
+      "url": "assets/sprites/Characters_SpriteSheet/Zombie/zombie_tilesheet.png",
+      "frameWidth": 80,
+      "frameHeight": 110,
+      "frameMax": 24,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "alienBeige",
+      "url": "assets/sprites/Enemies_SpriteSheet/alienBeige.png",
+      "frameWidth": 66,
+      "frameHeight": 92,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "alienBlue",
+      "url": "assets/sprites/Enemies_SpriteSheet/alienBlue.png",
+      "frameWidth": 66,
+      "frameHeight": 92,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "alienGreen",
+      "url": "assets/sprites/Enemies_SpriteSheet/alienGreen.png",
+      "frameWidth": 66,
+      "frameHeight": 92,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "alienPink",
+      "url": "assets/sprites/Enemies_SpriteSheet/alienPink.png",
+      "frameWidth": 66,
+      "frameHeight": 92,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "alienYellow",
+      "url": "assets/sprites/Enemies_SpriteSheet/alienYellow.png",
+      "frameWidth": 66,
+      "frameHeight": 92,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "image",
+      "key": "blue_land",
+      "url": "assets/images/backgrounds/blue_land.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "colored_desert",
+      "url": "assets/images/backgrounds/colored_desert.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "colored_grass",
+      "url": "assets/images/backgrounds/colored_grass.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "colored_land",
+      "url": "assets/images/backgrounds/colored_land.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "colored_shroom",
+      "url": "assets/images/backgrounds/colored_shroom.png",
+      "overwrite": false
+    },
+    {
       "type": "atlas",
-      "key": "environ",
-      "textureURL": "assets/atlas/textures.png",
-      "atlasURL": "assets/atlas/textures.json",
+      "key": "environments2",
+      "textureURL": "assets/atlas/env/environments2.png",
+      "atlasURL": "assets/atlas/env/environments2.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "environments3",
+      "textureURL": "assets/atlas/env/environments3.png",
+      "atlasURL": "assets/atlas/env/environments3.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "environments4",
+      "textureURL": "assets/atlas/env/environments4.png",
+      "atlasURL": "assets/atlas/env/environments4.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
     },
     {
       "type": "image",
-      "key": "bg",
-      "url": "assets/images/bg.png",
+      "key": "cross",
+      "url": "assets/images/specific_UI_and_others/cross.png",
       "overwrite": false
     },
     {
-      "type": "spritesheet",
-      "key": "coins",
-      "url": "assets/sprites/coins.png",
-      "frameWidth": 128,
-      "frameHeight": 128,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
+      "type": "image",
+      "key": "cursor_pointer3D",
+      "url": "assets/images/specific_UI_and_others/cursor_pointer3D.png",
+      "overwrite": false
     },
     {
-      "type": "spritesheet",
-      "key": "dino",
-      "url": "assets/sprites/dino.png",
-      "frameWidth": 210,
-      "frameHeight": 210,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
+      "type": "image",
+      "key": "gear",
+      "url": "assets/images/specific_UI_and_others/gear.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "glassPanel",
+      "url": "assets/images/specific_UI_and_others/glassPanel.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "metalPanel_blue",
+      "url": "assets/images/specific_UI_and_others/metalPanel_blue.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "metalPanel_green",
+      "url": "assets/images/specific_UI_and_others/metalPanel_green.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "metalPanel_red",
+      "url": "assets/images/specific_UI_and_others/metalPanel_red.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "metalPanel_yellow",
+      "url": "assets/images/specific_UI_and_others/metalPanel_yellow.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "power",
+      "url": "assets/images/specific_UI_and_others/power.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "share2",
+      "url": "assets/images/specific_UI_and_others/share2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "shoppingBasket",
+      "url": "assets/images/specific_UI_and_others/shoppingBasket.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "Button",
+      "url": "assets/canvas/prefabs/Button.js"
+    },
+    {
+      "type": "bitmapFont",
+      "key": "font_text.xml",
+      "textureURL": "assets/fonts/font_text.png",
+      "atlasURL": "assets/fonts/font_text.xml.fnt",
+      "atlasData": "",
+      "xSpacing": 0,
+      "ySpacing": 0
     }
   ],
   "meta": {
-    "generated": "1507009565580",
+    "generated": "1540280831447",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

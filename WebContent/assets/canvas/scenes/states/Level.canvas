@@ -1,0 +1,65 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Level",
+    "sceneWidth": 1024,
+    "sceneHeight": 768,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.State",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": false
+  },
+  "stateSettings": {
+    "scaleMode": "SHOW_ALL",
+    "pageAlignHorizontally": true,
+    "pageAlignVertically": true,
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "physicsSystem": "ARCADE",
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "55090a29-7261-4e67-ba9e-ad02571d3a8b",
+    "info": {
+      "editorName": "Level",
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "86bcc099-b995-4b34-ad88-5e9b4efc5212",
+        "asset": "0",
+        "info": {
+          "editorName": "colored_grass",
+          "x": -11,
+          "y": -5,
+          "scale.x": 1.0204120196449022,
+          "scale.y": 0.7579720125550314
+        }
+      }]
+    }
+  },
+  "type": "STATE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "level",
+    "asset": "colored_grass"
+  }},
+  "prefab-table": {}
+}
