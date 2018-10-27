@@ -41,25 +41,154 @@
     "info": {
       "editorName": "Level",
       "setAll": [],
-      "children": [{
-        "type": "image",
-        "id": "86bcc099-b995-4b34-ad88-5e9b4efc5212",
-        "asset": "0",
-        "info": {
-          "editorName": "colored_grass",
-          "x": -11,
-          "y": -5,
-          "scale.x": 1.0204120196449022,
-          "scale.y": 0.7579720125550314
+      "children": [
+        {
+          "type": "image",
+          "id": "86bcc099-b995-4b34-ad88-5e9b4efc5212",
+          "asset": "0",
+          "info": {
+            "editorName": "colored_grass",
+            "x": 4.149428320943116E-7,
+            "y": -6.710414709232282E-6,
+            "scale.y": 0.7579720125550314
+          }
+        },
+        {
+          "type": "group",
+          "id": "ae15f4cf-f13d-4619-aaae-8eb7f307c12a",
+          "info": {
+            "editorName": "Bar_Icons",
+            "x": 75,
+            "y": -8,
+            "scale.x": 0.8753967560946416,
+            "scale.y": 0.8385930934384439,
+            "setAll": [],
+            "children": [
+              {
+                "type": "image",
+                "id": "ae44d21b-c222-4f98-ad6d-e93ec9c9b323",
+                "asset": "1",
+                "info": {
+                  "editorName": "gear",
+                  "x": -5,
+                  "y": 25,
+                  "scale.x": 0.799708714809293,
+                  "scale.y": 0.799708714809293
+                }
+              },
+              {
+                "type": "image",
+                "id": "ad5cca66-578b-4ec7-bb9d-17c7d8b14dd8",
+                "asset": "2",
+                "info": {
+                  "editorName": "power",
+                  "x": 249,
+                  "y": 25,
+                  "scale.x": 0.79,
+                  "scale.y": 0.79
+                }
+              },
+              {
+                "type": "image",
+                "id": "0137b663-b119-40cd-a757-41be1dedd199",
+                "asset": "3",
+                "info": {
+                  "editorName": "home",
+                  "x": 535,
+                  "y": 25,
+                  "scale.x": 0.79,
+                  "scale.y": 0.79
+                }
+              },
+              {
+                "type": "image",
+                "id": "8e3bfa74-d67a-4146-a073-995ebb37cfb7",
+                "asset": "4",
+                "info": {
+                  "editorName": "singleplayer",
+                  "x": 817,
+                  "y": 25,
+                  "scale.x": 0.79,
+                  "scale.y": 0.79
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "group",
+          "id": "ca756803-75be-4b7f-a518-90cb8e797b21",
+          "info": {
+            "editorName": "Bar",
+            "setAll": [],
+            "children": [
+              {
+                "type": "image",
+                "id": "09caf8ac-4e73-4d95-9553-e2b14d06a7a2",
+                "asset": "5",
+                "info": {
+                  "editorName": "blue_button",
+                  "x": 143,
+                  "y": 31,
+                  "scale.x": 0.7,
+                  "scale.y": 0.7
+                }
+              },
+              {
+                "type": "image",
+                "id": "a34d93cf-58d8-48c4-bde1-42715dcde5d5",
+                "asset": "6",
+                "info": {
+                  "editorName": "blue_button1",
+                  "x": 145,
+                  "y": 32,
+                  "scale.x": 0.6753336780964688,
+                  "scale.y": 0.6174401541810791
+                }
+              }
+            ]
+          }
         }
-      }]
+      ]
     }
   },
   "type": "STATE",
-  "asset-table": {"0": {
-    "file": "WebContent/assets/pack.json",
-    "section": "level",
-    "asset": "colored_grass"
-  }},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "colored_grass"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "gear"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "power"
+    },
+    "3": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "home"
+    },
+    "4": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "singleplayer"
+    },
+    "5": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "blue_button13"
+    },
+    "6": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "blue_button01"
+    }
+  },
   "prefab-table": {}
 }

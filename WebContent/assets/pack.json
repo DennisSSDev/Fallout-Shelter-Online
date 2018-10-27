@@ -230,10 +230,34 @@
       "atlasData": "",
       "xSpacing": 0,
       "ySpacing": 0
+    },
+    {
+      "type": "image",
+      "key": "home",
+      "url": "assets/images/specific_UI_and_others/home.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "singleplayer",
+      "url": "assets/images/specific_UI_and_others/singleplayer.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "blue_button01",
+      "url": "assets/images/specific_UI_and_others/blue_button01.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "blue_button13",
+      "url": "assets/images/specific_UI_and_others/blue_button13.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1540280831447",
+    "generated": "1540666894837",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

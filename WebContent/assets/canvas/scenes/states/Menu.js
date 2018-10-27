@@ -39,7 +39,6 @@ class Menu extends Phaser.State {
 		this.add.existing(_elementStone);
 		
 		let bmpText = this.add.bitmapText(200, 100, 'font_text', 'BunkerCitizen', 128);
-		this.Log();
 		
 	}
 	
