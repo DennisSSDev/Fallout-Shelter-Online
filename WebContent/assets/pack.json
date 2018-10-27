@@ -254,10 +254,28 @@
       "key": "blue_button13",
       "url": "assets/images/specific_UI_and_others/blue_button13.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "red_button00",
+      "url": "assets/images/specific_UI_and_others/red_button00.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "red_button01",
+      "url": "assets/images/specific_UI_and_others/red_button01.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "red_button02",
+      "url": "assets/images/specific_UI_and_others/red_button02.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1540666894837",
+    "generated": "1540670977606",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

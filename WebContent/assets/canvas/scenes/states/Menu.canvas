@@ -54,31 +54,41 @@
           }
         },
         {
-          "type": "prefab",
-          "prefab": "0",
-          "id": "b32a83c6-c801-4015-b94c-af23cb5632d0",
-          "asset-ref": {
-            "file": "WebContent/assets/pack.json",
-            "section": "level",
-            "asset": "environments4",
-            "sprite": "elementStone015"
-          },
+          "type": "button",
+          "id": "838c665b-2857-4646-b422-800ddf15d921",
+          "asset": "1",
           "info": {
-            "editorName": "elementStone",
-            "editorShow": false,
-            "x": 455,
-            "y": 234,
-            "callback": ""
+            "editorName": "red_button",
+            "x": 450,
+            "y": 550,
+            "callback": "function(){this.game.state.start(\"Level\")}"
+          }
+        },
+        {
+          "type": "text",
+          "id": "865105a6-37a3-4f60-9f4c-6fe284c43335",
+          "info": {
+            "editorName": "text",
+            "x": 480,
+            "y": 560,
+            "text": "Click to Start"
           }
         }
       ]
     }
   },
   "type": "STATE",
-  "asset-table": {"0": {
-    "file": "WebContent/assets/pack.json",
-    "section": "level",
-    "asset": "colored_desert"
-  }},
-  "prefab-table": {"0": "WebContent/assets/canvas/prefabs/Button.canvas"}
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "colored_desert"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "red_button01"
+    }
+  },
+  "prefab-table": {}
 }

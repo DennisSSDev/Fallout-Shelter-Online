@@ -28,17 +28,19 @@ class Menu extends Phaser.State {
 	preload () {
 		
 		this.load.pack('level', 'assets/pack.json');
-		this.load.bitmapFont('font_text','assets/fonts/font_text.png', 'assets/fonts/font_text.xml.fnt');
+		
 	}
 	
 	create() {
 		var _colored_desert = this.add.sprite(-4.0, -4.0, 'colored_desert');
 		_colored_desert.scale.setTo(1.0104976500063336, 0.7569919450115183);
 		
-		var _elementStone = new Button(this.game, 455.0, 234.0);
-		this.add.existing(_elementStone);
+		this.add.button(450.0, 550.0, 'red_button01', function(){this.game.state.start("Level")}, this, null, null, null, null);
 		
-		let bmpText = this.add.bitmapText(200, 100, 'font_text', 'BunkerCitizen', 128);
+		this.add.text(480.0, 560.0, 'Click to Start', {"font":"bold 20px Arial"});
+		
+		
+		
 		
 	}
 	
