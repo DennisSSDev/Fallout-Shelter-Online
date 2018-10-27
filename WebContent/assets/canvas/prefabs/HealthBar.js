@@ -30,11 +30,11 @@ class HealthBar extends Phaser.Group {
 		
 	}
 	
-	this.depleteBar(amount){
+	depleteBar(amount){
 		this.status -= amount;
 		_blue_button1.scale.setTo(this.status, .617);
 	}
-	this.increaseBar(amount){
+	increaseBar(amount){
 		this.status += amount;
 		_blue_button1.scale.setTo(this.status, .617);
 	}

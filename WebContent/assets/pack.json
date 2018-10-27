@@ -281,11 +281,6 @@
     },
     {
       "type": "script",
-      "key": "HealthBar",
-      "url": "assets/canvas/prefabs/HealthBar.js"
-    },
-    {
-      "type": "script",
       "key": "instructionPanel",
       "url": "assets/canvas/prefabs/instructionPanel.js"
     },
@@ -296,17 +291,12 @@
     },
     {
       "type": "script",
-      "key": "Level",
-      "url": "assets/canvas/scenes/states/Level.js"
-    },
-    {
-      "type": "script",
-      "key": "Menu",
-      "url": "assets/canvas/scenes/states/Menu.js"
+      "key": "HealthBar",
+      "url": "assets/canvas/prefabs/HealthBar.js"
     }
   ],
   "meta": {
-    "generated": "1540678471741",
+    "generated": "1540679075740",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
