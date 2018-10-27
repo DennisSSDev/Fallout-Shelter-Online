@@ -32,12 +32,24 @@ class Menu extends Phaser.State {
 	}
 	
 	create() {
-		var _colored_desert = this.add.sprite(-4.0, -4.0, 'colored_desert');
-		_colored_desert.scale.setTo(1.0104976500063336, 0.7569919450115183);
+		var _s_colored_desert = this.add.sprite(-4.0, -4.0, 'colored_desert');
+		_s_colored_desert.scale.setTo(1.0104976500063336, 0.7569919450115183);
 		
-		this.add.button(450.0, 550.0, 'red_button01', function(){this.game.state.start("Level")}, this, null, null, null, null);
+		var _instructionPanel = new instructionPanel(this.game);
+		_instructionPanel.position.setTo(250.0, 125.0);
 		
-		this.add.text(480.0, 560.0, 'Click to Start', {"font":"bold 20px Arial"});
+		
+		var _startButton = this.add.group();
+		
+		this.add.button(450.0, 550.0, 'red_button01', function(){this.game.state.start("Level")}, this, null, null, null, null, _startButton);
+		
+		this.add.text(480.0, 560.0, 'Click to Start', {"font":"bold 20px Arial"}, _startButton);
+		
+		var _instructionsButton = this.add.group();
+		
+		this.add.button(815.0, 700.0, 'red_button01', null, this, null, null, null, null, _instructionsButton);
+		
+		this.add.text(850.0, 710.0, 'Instructions	', {"font":"bold 20px Arial"}, _instructionsButton);
 		
 		
 		
@@ -50,4 +62,4 @@ class Menu extends Phaser.State {
 	
 }
 /* --- end generated code --- */
-// -- user code here --
+	// -- user code here --

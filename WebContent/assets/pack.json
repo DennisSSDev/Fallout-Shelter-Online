@@ -272,10 +272,41 @@
       "key": "red_button02",
       "url": "assets/images/specific_UI_and_others/red_button02.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "red_panel",
+      "url": "assets/images/specific_UI_and_others/red_panel.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "HealthBar",
+      "url": "assets/canvas/prefabs/HealthBar.js"
+    },
+    {
+      "type": "script",
+      "key": "instructionPanel",
+      "url": "assets/canvas/prefabs/instructionPanel.js"
+    },
+    {
+      "type": "script",
+      "key": "instructionsButton",
+      "url": "assets/canvas/prefabs/instructionsButton.js"
+    },
+    {
+      "type": "script",
+      "key": "Level",
+      "url": "assets/canvas/scenes/states/Level.js"
+    },
+    {
+      "type": "script",
+      "key": "Menu",
+      "url": "assets/canvas/scenes/states/Menu.js"
     }
   ],
   "meta": {
-    "generated": "1540670977606",
+    "generated": "1540678471741",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
