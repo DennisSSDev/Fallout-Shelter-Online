@@ -274,11 +274,6 @@
       "url": "assets/maps/housing_room.png",
       "overwrite": false
 	},
-	{
-      "type": "script",
-      "key": "HealthBar",
-      "url": "assets/canvas/prefabs/HealthBar.js"
-    },
     {
       "type": "script",
       "key": "instructionButton",
@@ -316,12 +311,6 @@
       "type": "script",
       "key": "room",
       "url": "assets/canvas/prefabs/room.js"
-    }
-  ],
-  "meta": {
-    "generated": "1540746989273",
-      "key": "instructionPanel",
-      "url": "assets/canvas/prefabs/instructionPanel.js"
     }
   ],
   "meta": {
