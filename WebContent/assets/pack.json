@@ -258,17 +258,6 @@
       "overwrite": false
     },
     {
-      "type": "script",
-<<<<<<< HEAD
-      "key": "instructionPanel",
-      "url": "assets/canvas/prefabs/instructionPanel.js"
-    },
-    {
-      "type": "script",
-      "key": "instructionsButton",
-      "url": "assets/canvas/prefabs/instructionsButton.js"
-    },
-    {
       "type": "image",
       "key": "energy_room",
       "url": "assets/maps/energy_room.png",
@@ -290,14 +279,11 @@
   "level_only": [
     {
       "type": "script",
-=======
->>>>>>> branch 'master' of https://github.com/DennisSSDev/Fallout-Shelter-Online.git
       "key": "HealthBar",
       "url": "assets/canvas/prefabs/HealthBar.js"
     },
     {
       "type": "script",
-<<<<<<< HEAD
       "key": "PlayerCount",
       "url": "assets/canvas/prefabs/PlayerCount.js"
     },
@@ -315,23 +301,15 @@
       "type": "script",
       "key": "room",
       "url": "assets/canvas/prefabs/room.js"
-=======
-      "key": "instructionButton",
-      "url": "assets/canvas/prefabs/instructionButton.js"
     },
     {
-      "type": "script",
-      "key": "instructionPanel",
-      "url": "assets/canvas/prefabs/instructionPanel.js"
->>>>>>> branch 'master' of https://github.com/DennisSSDev/Fallout-Shelter-Online.git
+	  "type": "script",
+      "key": "instructionButton",
+      "url": "assets/canvas/prefabs/instructionButton.js"
     }
   ],
   "meta": {
-<<<<<<< HEAD
-    "generated": "1540705729608",
-=======
     "generated": "1540698846150",
->>>>>>> branch 'master' of https://github.com/DennisSSDev/Fallout-Shelter-Online.git
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
