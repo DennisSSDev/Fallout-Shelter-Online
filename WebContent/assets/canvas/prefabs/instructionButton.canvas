@@ -1,0 +1,59 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "instructionButton",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.Button",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "57d6504d-4034-4391-8d46-bad026ebea15",
+    "info": {
+      "editorName": "root",
+      "setAll": [],
+      "children": [{
+        "type": "button",
+        "id": "c997c86e-fe4f-4a40-9b19-0d0596321475",
+        "asset": "0",
+        "info": {
+          "editorName": "b_instructions",
+          "editorGenerate": false,
+          "callback": ""
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "level",
+    "asset": "red_button01"
+  }},
+  "prefab-table": {}
+}

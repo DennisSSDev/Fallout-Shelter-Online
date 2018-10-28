@@ -4,7 +4,7 @@
     "className": "Menu",
     "sceneWidth": 1024,
     "sceneHeight": 768,
-    "generateOnSave": true,
+    "generateOnSave": false,
     "enableStepping": false,
     "lang": "JAVA_SCRIPT_6",
     "baseClass": "Phaser.State",
@@ -54,50 +54,6 @@
           }
         },
         {
-          "type": "prefab",
-          "prefab": "0",
-          "id": "577aaabc-2990-4a77-98e2-64a428850ee7",
-          "info": {
-            "editorName": "instructionPanel",
-            "x": 250,
-            "y": 125
-          }
-        },
-        {
-          "type": "group",
-          "id": "bb996585-d25f-4199-b640-7d2d873e40da",
-          "info": {
-            "editorName": "instructionsPanel",
-            "editorGenerate": false,
-            "editorShow": false,
-            "setAll": [],
-            "children": [
-              {
-                "type": "image",
-                "id": "21d84130-0c53-4df1-98c1-f50855de10d7",
-                "asset": "1",
-                "info": {
-                  "editorName": "s_instructions_panel",
-                  "x": 250,
-                  "y": 125,
-                  "scale.x": 6,
-                  "scale.y": 6
-                }
-              },
-              {
-                "type": "text",
-                "id": "decf56ce-6830-40dd-816d-84148a3d476e",
-                "info": {
-                  "editorName": "t_instructions_panel",
-                  "x": 309,
-                  "y": 177,
-                  "text": "Instructions:\r\n\r\n\u2022 Don't let your citizens die\r\n\r\nGood Luck Out there!"
-                }
-              }
-            ]
-          }
-        },
-        {
           "type": "group",
           "id": "544c8005-425e-46c9-8ff8-0db5889496a5",
           "info": {
@@ -107,7 +63,7 @@
               {
                 "type": "button",
                 "id": "838c665b-2857-4646-b422-800ddf15d921",
-                "asset": "2",
+                "asset": "1",
                 "info": {
                   "editorName": "b_start",
                   "x": 450,
@@ -138,11 +94,12 @@
               {
                 "type": "button",
                 "id": "a0d767db-c034-471c-a1ab-769451246794",
-                "asset": "2",
+                "asset": "1",
                 "info": {
                   "editorName": "b_instructions",
                   "x": 815,
-                  "y": 700
+                  "y": 700,
+                  "callback": ""
                 }
               },
               {
@@ -156,6 +113,64 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "type": "group",
+          "id": "bb996585-d25f-4199-b640-7d2d873e40da",
+          "info": {
+            "editorName": "instructionsPanel",
+            "setAll": [],
+            "children": [
+              {
+                "type": "image",
+                "id": "21d84130-0c53-4df1-98c1-f50855de10d7",
+                "asset": "2",
+                "info": {
+                  "editorName": "s_instructions_panel",
+                  "x": 250,
+                  "y": 125,
+                  "scale.x": 6,
+                  "scale.y": 6
+                }
+              },
+              {
+                "type": "text",
+                "id": "decf56ce-6830-40dd-816d-84148a3d476e",
+                "info": {
+                  "editorName": "t_instructions_panel",
+                  "x": 309,
+                  "y": 177,
+                  "text": "Instructions:\r\n\r\n\u2022 Don't let your citizens die\r\n\r\nGood Luck Out there!"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "0",
+          "id": "811da844-ca60-43ce-aae8-bc5709ad4119",
+          "info": {
+            "editorName": "instructionPanel",
+            "x": 251,
+            "y": 126
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "1",
+          "id": "11054538-c40c-4dc6-88fe-68598603cbdf",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "red_button01"
+          },
+          "info": {
+            "editorName": "b_instructions1",
+            "x": 386,
+            "y": 662,
+            "callback": "function(){showHideInstructions()}"
           }
         }
       ]
@@ -171,13 +186,16 @@
     "1": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-      "asset": "red_panel"
+      "asset": "red_button01"
     },
     "2": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-      "asset": "red_button01"
+      "asset": "red_panel"
     }
   },
-  "prefab-table": {"0": "WebContent/assets/canvas/prefabs/instructionPanel.canvas"}
+  "prefab-table": {
+    "0": "WebContent/assets/canvas/prefabs/instructionPanel.canvas",
+    "1": "WebContent/assets/canvas/prefabs/instructionButton.canvas"
+  }
 }
