@@ -210,6 +210,11 @@
       "url": "assets/canvas/prefabs/Button.js"
     },
     {
+      "type": "script",
+      "key": "instructionButton",
+      "url": "assets/canvas/prefabs/instructionButton.js"
+    },
+    {
       "type": "image",
       "key": "home",
       "url": "assets/images/specific_UI_and_others/home.png",
