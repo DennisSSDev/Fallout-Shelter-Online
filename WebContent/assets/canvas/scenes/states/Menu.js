@@ -41,26 +41,20 @@ class Menu extends Phaser.State {
 		
 		this.add.text(480.0, 560.0, 'Click to Start', {"font":"bold 20px Arial"}, _startButton);
 		
-		var _instructionsButton = this.add.group();
-		
-		this.add.button(815.0, 700.0, 'red_button01', null, this, null, null, null, null, _instructionsButton);
-		
-		this.add.text(850.0, 710.0, 'Instructions	', {"font":"bold 20px Arial"}, _instructionsButton);
-		
 		var _instructionsPanel = this.add.group();
 		
 		var _s_instructions_panel = this.add.sprite(250.0, 125.0, 'red_panel', null, _instructionsPanel);
 		_s_instructions_panel.scale.setTo(6.0, 6.0);
 		
-		this.add.text(309.0, 177.0, 'Instructions:\n\n• Don\'t let your citizens die\n\nGood Luck Out there!', {"font":"bold 20px Arial"}, _instructionsPanel);
+		var _t_instructions = this.add.text(309.0, 177.0, 'Instructions:\n\n• Don\'t let your citizens die\n\nGood Luck Out there!', {"font":"bold 20px Arial"}, _instructionsPanel);
 		
-		var _instructionPanel = new instructionPanel(this.game);
-		_instructionPanel.position.setTo(251.0, 126.0);
+		var _b_instructions = new instructionButton(this.game, 815.0, 700.0);
+		this.add.existing(_b_instructions);
 		
-		var _b_instructions1 = new instructionButton(this.game, 386.0, 662.0);
-		this.add.existing(_b_instructions1);
+		this.add.text(850.0, 710.0, 'Instructions	', {"font":"bold 20px Arial"});
 		
-		_b_instructions1.setInstructionPanel(_instructionPanel);
+		
+		_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions);
 		
 		
 	}
@@ -73,4 +67,3 @@ class Menu extends Phaser.State {
 }
 /* --- end generated code --- */
 	// -- user code here --
-console.log(game);

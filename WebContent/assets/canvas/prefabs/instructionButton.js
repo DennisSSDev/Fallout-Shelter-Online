@@ -32,25 +32,30 @@ class instructionButton extends Phaser.Button {
 			aUpFrame == undefined || aUpFrame == null? null : aUpFrame
 		);
 		
-		this.instructionPanel = null;		
+		this.instructionPanel = null;
+		this.instructionText = null;
 	}
 	
 	/* sprite-methods-begin */
 	// -- user code here --
 	// this.instructionPanel = null;	
-	setInstructionPanel(p_panel){
+	setInstructionPanel(p_panel, p_text){
 		this.instructionPanel = p_panel;
+		this.instructionText = p_text;
 		//console.log(this.instructionPanel);
 		this.onInputDown.add(this.showHideInstructions, this);
 	}
 
 	showHideInstructions(){
 		console.log(this.instructionPanel);
+		
 		if(this.instructionPanel.alpha == 0.0){
 			this.instructionPanel.alpha = 1.0;
+			this.instructionText.alpha = 1.0;
 		}
 		else {
 			this.instructionPanel.alpha = 0.0;
+			this.instructionText.alpha = 0.0;
 		}
 	}
 	/* sprite-methods-end */

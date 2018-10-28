@@ -86,37 +86,6 @@
         },
         {
           "type": "group",
-          "id": "bfaf07cf-0b0a-4cf0-ae4e-7870532248c5",
-          "info": {
-            "editorName": "instructionsButton",
-            "setAll": [],
-            "children": [
-              {
-                "type": "button",
-                "id": "a0d767db-c034-471c-a1ab-769451246794",
-                "asset": "1",
-                "info": {
-                  "editorName": "b_instructions",
-                  "x": 815,
-                  "y": 700,
-                  "callback": ""
-                }
-              },
-              {
-                "type": "text",
-                "id": "3c37b131-21ba-4904-a0b5-48d99332bb26",
-                "info": {
-                  "editorName": "t_instructions_button",
-                  "x": 850,
-                  "y": 710,
-                  "text": "Instructions\t"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "group",
           "id": "bb996585-d25f-4199-b640-7d2d873e40da",
           "info": {
             "editorName": "instructionsPanel",
@@ -150,16 +119,6 @@
         {
           "type": "prefab",
           "prefab": "0",
-          "id": "811da844-ca60-43ce-aae8-bc5709ad4119",
-          "info": {
-            "editorName": "instructionPanel",
-            "x": 251,
-            "y": 126
-          }
-        },
-        {
-          "type": "prefab",
-          "prefab": "1",
           "id": "11054538-c40c-4dc6-88fe-68598603cbdf",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -167,10 +126,55 @@
             "asset": "red_button01"
           },
           "info": {
-            "editorName": "b_instructions1",
-            "x": 386,
-            "y": 662,
+            "editorName": "b_instructions",
+            "x": 815,
+            "y": 700,
             "callback": "function(){showHideInstructions()}"
+          }
+        },
+        {
+          "type": "text",
+          "id": "d187fcdb-afd9-4ad8-b62e-35f33f18f456",
+          "info": {
+            "editorName": "t_instructions",
+            "x": 850,
+            "y": 710,
+            "text": "Instructions\t"
+          }
+        },
+        {
+          "type": "group",
+          "id": "bfaf07cf-0b0a-4cf0-ae4e-7870532248c5",
+          "info": {
+            "editorName": "instructionsButton_template",
+            "editorPick": false,
+            "editorGenerate": false,
+            "editorField": true,
+            "editorShow": false,
+            "setAll": [],
+            "children": [
+              {
+                "type": "button",
+                "id": "a0d767db-c034-471c-a1ab-769451246794",
+                "asset": "1",
+                "info": {
+                  "editorName": "b_instructions_template",
+                  "x": 815,
+                  "y": 700,
+                  "callback": ""
+                }
+              },
+              {
+                "type": "text",
+                "id": "3c37b131-21ba-4904-a0b5-48d99332bb26",
+                "info": {
+                  "editorName": "t_instructions_button_template",
+                  "x": 850,
+                  "y": 710,
+                  "text": "Instructions\t"
+                }
+              }
+            ]
           }
         }
       ]
@@ -194,8 +198,5 @@
       "asset": "red_panel"
     }
   },
-  "prefab-table": {
-    "0": "WebContent/assets/canvas/prefabs/instructionPanel.canvas",
-    "1": "WebContent/assets/canvas/prefabs/instructionButton.canvas"
-  }
+  "prefab-table": {"0": "WebContent/assets/canvas/prefabs/instructionButton.canvas"}
 }
