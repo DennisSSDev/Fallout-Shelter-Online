@@ -102,12 +102,6 @@
     },
     {
       "type": "image",
-      "key": "blue_land",
-      "url": "assets/images/backgrounds/blue_land.png",
-      "overwrite": false
-    },
-    {
-      "type": "image",
       "key": "colored_desert",
       "url": "assets/images/backgrounds/colored_desert.png",
       "overwrite": false
@@ -135,13 +129,6 @@
       "key": "environments2",
       "textureURL": "assets/atlas/env/environments2.png",
       "atlasURL": "assets/atlas/env/environments2.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "atlas",
-      "key": "environments3",
-      "textureURL": "assets/atlas/env/environments3.png",
-      "atlasURL": "assets/atlas/env/environments3.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
     },
     {
@@ -223,13 +210,9 @@
       "url": "assets/canvas/prefabs/Button.js"
     },
     {
-      "type": "bitmapFont",
-      "key": "font_text.xml",
-      "textureURL": "assets/fonts/font_text.png",
-      "atlasURL": "assets/fonts/font_text.xml.fnt",
-      "atlasData": "",
-      "xSpacing": 0,
-      "ySpacing": 0
+      "type": "script",
+      "key": "instructionButton",
+      "url": "assets/canvas/prefabs/instructionButton.js"
     },
     {
       "type": "image",
@@ -280,6 +263,18 @@
       "overwrite": false
     },
     {
+      "type": "image",
+      "key": "energy_room",
+      "url": "assets/maps/energy_room.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "housing_room",
+      "url": "assets/maps/housing_room.png",
+      "overwrite": false
+	},
+	{
       "type": "script",
       "key": "HealthBar",
       "url": "assets/canvas/prefabs/HealthBar.js"
@@ -288,6 +283,45 @@
       "type": "script",
       "key": "instructionButton",
       "url": "assets/canvas/prefabs/instructionButton.js"
+    },
+    {
+      "type": "image",
+      "key": "the_map",
+      "url": "assets/maps/the_map.png",
+      "overwrite": false
+    }
+  ],
+  "level_only": [
+    {
+      "type": "script",
+      "key": "HealthBar",
+      "url": "assets/canvas/prefabs/HealthBar.js"
+    },
+    {
+      "type": "script",
+      "key": "PlayerCount",
+      "url": "assets/canvas/prefabs/PlayerCount.js"
+    },
+    {
+      "type": "script",
+      "key": "Room_Creator",
+      "url": "assets/canvas/prefabs/Room_Creator.js"
+    },
+    {
+      "type": "script",
+      "key": "Creator_HoverWindow",
+      "url": "assets/canvas/prefabs/Creator_HoverWindow.js"
+    },
+    {
+      "type": "script",
+      "key": "room",
+      "url": "assets/canvas/prefabs/room.js"
+    }
+  ],
+  "meta": {
+    "generated": "1540746989273",
+      "key": "instructionPanel",
+      "url": "assets/canvas/prefabs/instructionPanel.js"
     }
   ],
   "meta": {

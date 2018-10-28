@@ -1,0 +1,53 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "PlayerCount",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.Text",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "15efe1f5-e416-44f9-97a1-edc1d8b2d4c3",
+    "info": {
+      "editorName": "root",
+      "setAll": [],
+      "children": [{
+        "type": "text",
+        "id": "5587ec5f-c831-438d-9b58-c9dc8bdc61d6",
+        "info": {
+          "editorName": "text",
+          "text": "3"
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {},
+  "prefab-table": {}
+}

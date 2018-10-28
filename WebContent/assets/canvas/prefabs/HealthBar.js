@@ -16,29 +16,53 @@ class HealthBar extends Phaser.Group {
 	 * @param {boolean} aEnableBody If true all Sprites created with {@link #create} or {@link #createMulitple} will have a physics body created on them. Change the body type with {@link #physicsBodyType}.
 	 * @param {number} aPhysicsBodyType The physics body type to use when physics bodies are automatically added. See {@link #physicsBodyType} for values.
 	 */
-	constructor(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyType, stat = 0.67) {
+	constructor(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyType) {
 		
 		super(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyType);
-		this.status = stat;
+		this.status = .617;
 		var _blue_button = this.game.add.sprite(0.0, 0.0, 'blue_button13', null, this);
 		_blue_button.scale.setTo(0.7, 0.7);
 		
 		var _blue_button1 = this.game.add.sprite(2.0, 1.0, 'blue_button01', null, this);
 		_blue_button1.scale.setTo(0.6753336780964688, 0.6174401541810791);
 		
-		this.depleteBar(.3);
-		
+		this.blueBar = _blue_button1;
+		this.tick = true;
 	}
 	
 	depleteBar(amount){
 		this.status -= amount;
-		_blue_button1.scale.setTo(this.status, .617);
-	}
-	increaseBar(amount){
-		this.status += amount;
-		_blue_button1.scale.setTo(this.status, .617);
+		this.clampScale();
+		this.blueBar.scale.setTo(this.status, .617);
 	}
 	
+	increaseBar(amount){
+		this.status += amount;
+		this.clampScale();
+		this.blueBar.scale.setTo(this.status, .617);
+	}
+	
+	setBar(val){
+		this.status = val;
+		this.clampScale();
+		this.blueBar.scale.setTo(this.status, .617);
+	}
+	
+	setTick(val){
+		this.tick = val;
+	}
+	
+	update(){
+		if(this.tick)
+			this.depleteBar(.00005);
+	}
+	
+	clampScale(){
+		if(this.status > .618)
+			this.status = .617;
+		else if(this.status < 0)
+			this.status = 0;
+	}
 	/* group-methods-begin */
 	// -- user code here --
 	/* group-methods-end */

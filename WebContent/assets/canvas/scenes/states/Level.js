@@ -14,7 +14,9 @@ class Level extends Phaser.State {
 	constructor() {
 		
 		super();
-		
+		this.cursors = null;
+		this.keyEventScaleIn = null;
+		this.keyEventScaleOut = null;
 	}
 	
 	init() {
@@ -26,15 +28,13 @@ class Level extends Phaser.State {
 		
 	}
 	
-	preload () {
-		
-		this.load.pack('level', 'assets/pack.json');
-		
+	preload () {	
+		this.load.pack('level_only', 'assets/pack.json');
 	}
 	
 	create() {
-		var _colored_grass = this.add.sprite(4.149428320943116E-7, -6.710414709232282E-6, 'colored_grass');
-		_colored_grass.scale.setTo(1.0, 0.7579720125550314);
+		var _colored_grass = this.add.sprite(-212.0, -379.0, 'colored_grass');
+		_colored_grass.scale.setTo(1.3922020086315436, 1.3922020086315436);
 		
 		var _Bar_Icons = this.add.group();
 		_Bar_Icons.position.setTo(75.0, -8.0);
@@ -43,7 +43,7 @@ class Level extends Phaser.State {
 		var _gear = this.add.sprite(-5.0, 25.0, 'gear', null, _Bar_Icons);
 		_gear.scale.setTo(0.799708714809293, 0.799708714809293);
 		
-		var _power = this.add.sprite(249.0, 25.0, 'power', null, _Bar_Icons);
+		var _power = this.add.sprite(266.0, 25.0, 'power', null, _Bar_Icons);
 		_power.scale.setTo(0.79, 0.79);
 		
 		var _home = this.add.sprite(535.0, 25.0, 'home', null, _Bar_Icons);
@@ -52,21 +52,85 @@ class Level extends Phaser.State {
 		var _singleplayer = this.add.sprite(817.0, 25.0, 'singleplayer', null, _Bar_Icons);
 		_singleplayer.scale.setTo(0.79, 0.79);
 		
-		var _Bar = this.add.group();
+		var _the_map = this.add.sprite(-104.0, -230.0, 'the_map');
+		_the_map.scale.setTo(0.6980467016225123, 0.6980467016225123);
 		
-		var _blue_button = this.add.sprite(143.0, 31.0, 'blue_button13', null, _Bar);
-		_blue_button.scale.setTo(0.7, 0.7);
+		var _resources_bar = new HealthBar(this.game);
+		_resources_bar.position.setTo(140.0, 34.50000762939453);
 		
-		var _blue_button1 = this.add.sprite(145.0, 32.0, 'blue_button01', null, _Bar);
-		_blue_button1.scale.setTo(0.6753336780964688, 0.6174401541810791);
+		var _power_bar = new HealthBar(this.game);
+		_power_bar.position.setTo(381.0, 35.0);
+		
+		var _housing_bar = new HealthBar(this.game);
+		_housing_bar.position.setTo(618.0, 33.0);
 		
 		
+		var _Total_Count = new PlayerCount(this.game, 895.0, 13.0);
+		this.add.existing(_Total_Count);
+		
+		var _glassPanel = new Creator_HoverWindow(this.game, 414.0, 284.0);
+		this.add.existing(_glassPanel);
 		
 		
+		this.game.world.setBounds(-150, -150, 1400, 1100);
+		this.setupInput();
 	}
 	
 	/* state-methods-begin */
 	// -- user code here --
+	
+	setupTick(){
+		//init the ticks of the bars here
+	}
+	
+	
+	setupInput(){
+		this.cursors = this.game.input.keyboard.createCursorKeys();
+		this.keyEventScaleIn = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
+		this.keyEventScaleIn.onDown.add(this.scaleWorldIn, this);
+		
+		this.keyEventScaleOut = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
+		this.keyEventScaleOut.onDown.add(this.scaleWorldOut, this);
+	}
+	
+	scaleWorldIn(){
+		this.game.world.scale.x += 0.05;
+		this.game.world.scale.y += 0.05;
+		if(this.game.world.scale.x > 1.5){
+			this.game.world.scale.x = 1.5;
+			this.game.world.scale.y = 1.5;
+		}
+		
+	}
+	
+	scaleWorldOut(){
+		this.game.world.scale.x -= 0.05;
+		this.game.world.scale.y -= 0.05;
+		if(this.game.world.scale.x < .75){
+			this.game.world.scale.x = .75;
+			this.game.world.scale.y = .75;
+		}
+	}
+	
+	update() {
+	
+	    if (this.cursors.up.isDown)
+	    {
+	        this.game.camera.y -= 4;
+	    }
+	    if (this.cursors.down.isDown)
+	    {
+	        this.game.camera.y += 4;
+	    }
+	    if (this.cursors.left.isDown)
+	    {
+	        this.game.camera.x -= 4;
+	    }
+	    if (this.cursors.right.isDown)
+	    {
+	        this.game.camera.x += 4;
+	    }
+	}
 	/* state-methods-end */
 	
 }
