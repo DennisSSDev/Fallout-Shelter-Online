@@ -45,8 +45,15 @@ class Menu extends Phaser.State {
 		
 		var _s_instructions_panel = this.add.sprite(250.0, 125.0, 'red_panel', null, _instructionsPanel);
 		_s_instructions_panel.scale.setTo(6.0, 6.0);
+<<<<<<< HEAD
 		
 		var _t_instructions = this.add.text(309.0, 177.0, 'Instructions:\n\n• Don\'t let your citizens die\n\nGood Luck Out there!', {"font":"bold 20px Arial"}, _instructionsPanel);
+=======
+		_s_instructions_panel.alpha = 0.0;
+		
+		var _t_instructions_panel = this.add.text(309.0, 177.0, 'Instructions:\n\n• Don\'t let your citizens die\n\nGood Luck Out there!', {"font":"bold 20px Arial"}, _instructionsPanel);
+		_t_instructions_panel.alpha = 0.0;
+>>>>>>> fe9addcdb37c07865511f39b4910738103c00d67
 		
 		var _b_instructions = new instructionButton(this.game, 815.0, 700.0);
 		this.add.existing(_b_instructions);
@@ -54,14 +61,24 @@ class Menu extends Phaser.State {
 		this.add.text(850.0, 710.0, 'Instructions	', {"font":"bold 20px Arial"});
 		
 		
+<<<<<<< HEAD
 		_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions);
+=======
+		_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions_panel);
+>>>>>>> fe9addcdb37c07865511f39b4910738103c00d67
 		
 		
 	}
 	
 	/* state-methods-begin */
 	// -- user code here --
+<<<<<<< HEAD
 	//_b_instructions1.setInstructionPanel(_s_instructions_panel);
+=======
+	//_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions);
+	//_s_instructions_panel.alpha = 0.0;
+	//_t_instructions_panel.alpha = 0.0;
+>>>>>>> fe9addcdb37c07865511f39b4910738103c00d67
 	/* state-methods-end */
 	
 }

@@ -263,6 +263,7 @@
       "overwrite": false
     },
     {
+<<<<<<< HEAD
       "type": "image",
       "key": "energy_room",
       "url": "assets/maps/energy_room.png",
@@ -273,6 +274,16 @@
       "key": "housing_room",
       "url": "assets/maps/housing_room.png",
       "overwrite": false
+=======
+      "type": "script",
+      "key": "HealthBar",
+      "url": "assets/canvas/prefabs/HealthBar.js"
+    },
+    {
+      "type": "script",
+      "key": "instructionButton",
+      "url": "assets/canvas/prefabs/instructionButton.js"
+>>>>>>> fe9addcdb37c07865511f39b4910738103c00d67
     },
     {
       "type": "image",
@@ -284,6 +295,7 @@
   "level_only": [
     {
       "type": "script",
+<<<<<<< HEAD
       "key": "HealthBar",
       "url": "assets/canvas/prefabs/HealthBar.js"
     },
@@ -310,6 +322,14 @@
   ],
   "meta": {
     "generated": "1540746989273",
+=======
+      "key": "instructionPanel",
+      "url": "assets/canvas/prefabs/instructionPanel.js"
+    }
+  ],
+  "meta": {
+    "generated": "1540698846150",
+>>>>>>> fe9addcdb37c07865511f39b4910738103c00d67
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
