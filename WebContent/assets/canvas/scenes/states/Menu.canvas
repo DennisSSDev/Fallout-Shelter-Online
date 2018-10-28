@@ -100,7 +100,8 @@
                   "x": 250,
                   "y": 125,
                   "scale.x": 6,
-                  "scale.y": 6
+                  "scale.y": 6,
+                  "alpha": 0
                 }
               },
               {
@@ -110,6 +111,7 @@
                   "editorName": "t_instructions_panel",
                   "x": 309,
                   "y": 177,
+                  "alpha": 0,
                   "text": "Instructions:\r\n\r\n\u2022 Don't let your citizens die\r\n\r\nGood Luck Out there!"
                 }
               }
