@@ -27,6 +27,7 @@
       0
     ],
     "autoLoad": true,
+    "preloadSpriteId": "",
     "preloadSprite_direction": 0,
     "load.pack": []
   },
@@ -35,27 +36,20 @@
     "id": "73b931a1-4eaa-4de2-aca0-581893bab891",
     "info": {
       "editorName": "root",
-      "prefabOverride": ["position"],
       "setAll": [],
       "children": [{
         "type": "group",
         "id": "7e44dcd6-0b95-4278-aaae-ae36a5b467e4",
         "info": {
           "editorName": "group",
-          "prefabOverride": ["position"],
           "setAll": [],
           "children": [
             {
               "type": "image",
               "id": "bdb912cf-4eb9-4659-8cbd-eddf8ac73fea",
-              "asset-ref": {
-                "file": "WebContent/assets/pack.json",
-                "section": "level",
-                "asset": "blue_button13"
-              },
+              "asset": "0",
               "info": {
                 "editorName": "blue_button",
-                "prefabOverride": ["position"],
                 "scale.x": 0.7,
                 "scale.y": 0.7
               }
@@ -63,14 +57,9 @@
             {
               "type": "image",
               "id": "0ff9bdb4-f68f-49cd-b223-508df581cea1",
-              "asset-ref": {
-                "file": "WebContent/assets/pack.json",
-                "section": "level",
-                "asset": "blue_button01"
-              },
+              "asset": "1",
               "info": {
                 "editorName": "blue_button1",
-                "prefabOverride": ["position"],
                 "x": 2,
                 "y": 1,
                 "scale.x": 0.6753336780964688,
@@ -83,6 +72,17 @@
     }
   },
   "type": "GROUP",
-  "asset-table": {},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "blue_button13"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "blue_button01"
+    }
+  },
   "prefab-table": {}
 }

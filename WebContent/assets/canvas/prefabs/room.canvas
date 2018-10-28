@@ -1,0 +1,59 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "room",
+    "sceneWidth": 640,
+    "sceneHeight": 480,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "ad48e23d-72a4-48e9-a568-a38bb8619b9f",
+    "info": {
+      "editorName": "root",
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "2e38b270-304f-4540-a11d-212cb7f691a2",
+        "asset": "0",
+        "info": {
+          "editorName": "energy_room",
+          "scale.x": 0.369,
+          "scale.y": 0.393
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "level",
+    "asset": "energy_room"
+  }},
+  "prefab-table": {}
+}

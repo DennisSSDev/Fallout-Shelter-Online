@@ -102,12 +102,6 @@
     },
     {
       "type": "image",
-      "key": "blue_land",
-      "url": "assets/images/backgrounds/blue_land.png",
-      "overwrite": false
-    },
-    {
-      "type": "image",
       "key": "colored_desert",
       "url": "assets/images/backgrounds/colored_desert.png",
       "overwrite": false
@@ -135,13 +129,6 @@
       "key": "environments2",
       "textureURL": "assets/atlas/env/environments2.png",
       "atlasURL": "assets/atlas/env/environments2.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "atlas",
-      "key": "environments3",
-      "textureURL": "assets/atlas/env/environments3.png",
-      "atlasURL": "assets/atlas/env/environments3.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
     },
     {
@@ -223,15 +210,6 @@
       "url": "assets/canvas/prefabs/Button.js"
     },
     {
-      "type": "bitmapFont",
-      "key": "font_text.xml",
-      "textureURL": "assets/fonts/font_text.png",
-      "atlasURL": "assets/fonts/font_text.xml.fnt",
-      "atlasData": "",
-      "xSpacing": 0,
-      "ySpacing": 0
-    },
-    {
       "type": "image",
       "key": "home",
       "url": "assets/images/specific_UI_and_others/home.png",
@@ -290,13 +268,53 @@
       "url": "assets/canvas/prefabs/instructionsButton.js"
     },
     {
+      "type": "image",
+      "key": "energy_room",
+      "url": "assets/maps/energy_room.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "housing_room",
+      "url": "assets/maps/housing_room.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "the_map",
+      "url": "assets/maps/the_map.png",
+      "overwrite": false
+    }
+  ],
+  "level_only": [
+    {
       "type": "script",
       "key": "HealthBar",
       "url": "assets/canvas/prefabs/HealthBar.js"
+    },
+    {
+      "type": "script",
+      "key": "PlayerCount",
+      "url": "assets/canvas/prefabs/PlayerCount.js"
+    },
+    {
+      "type": "script",
+      "key": "Room_Creator",
+      "url": "assets/canvas/prefabs/Room_Creator.js"
+    },
+    {
+      "type": "script",
+      "key": "Creator_HoverWindow",
+      "url": "assets/canvas/prefabs/Creator_HoverWindow.js"
+    },
+    {
+      "type": "script",
+      "key": "room",
+      "url": "assets/canvas/prefabs/room.js"
     }
   ],
   "meta": {
-    "generated": "1540679075740",
+    "generated": "1540705729608",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

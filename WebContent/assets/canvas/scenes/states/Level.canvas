@@ -30,10 +30,13 @@
       0
     ],
     "physicsSystem": "ARCADE",
-    "autoLoad": true,
-    "preloadSpriteId": "",
+    "autoLoad": false,
+    "preloadSpriteId": "5c6e556f-23b7-4a66-ac03-b3149d900e4a",
     "preloadSprite_direction": 0,
-    "load.pack": []
+    "load.pack": [{
+      "file": "WebContent/assets/pack.json",
+      "section": "level_only"
+    }]
   },
   "world": {
     "type": "group",
@@ -48,9 +51,10 @@
           "asset": "0",
           "info": {
             "editorName": "colored_grass",
-            "x": 4.149428320943116E-7,
-            "y": -6.710414709232282E-6,
-            "scale.y": 0.7579720125550314
+            "x": -212,
+            "y": -379,
+            "scale.x": 1.3922020086315436,
+            "scale.y": 1.3922020086315436
           }
         },
         {
@@ -82,7 +86,7 @@
                 "asset": "2",
                 "info": {
                   "editorName": "power",
-                  "x": 249,
+                  "x": 266,
                   "y": 25,
                   "scale.x": 0.79,
                   "scale.y": 0.79
@@ -116,37 +120,70 @@
           }
         },
         {
-          "type": "group",
-          "id": "ca756803-75be-4b7f-a518-90cb8e797b21",
+          "type": "image",
+          "id": "88094c1e-b90f-46c6-90ea-ed9c614704f0",
+          "asset": "5",
           "info": {
-            "editorName": "Bar",
-            "setAll": [],
-            "children": [
-              {
-                "type": "image",
-                "id": "09caf8ac-4e73-4d95-9553-e2b14d06a7a2",
-                "asset": "5",
-                "info": {
-                  "editorName": "blue_button",
-                  "x": 143,
-                  "y": 31,
-                  "scale.x": 0.7,
-                  "scale.y": 0.7
-                }
-              },
-              {
-                "type": "image",
-                "id": "a34d93cf-58d8-48c4-bde1-42715dcde5d5",
-                "asset": "6",
-                "info": {
-                  "editorName": "blue_button1",
-                  "x": 145,
-                  "y": 32,
-                  "scale.x": 0.6753336780964688,
-                  "scale.y": 0.6174401541810791
-                }
-              }
-            ]
+            "editorName": "the_map",
+            "x": -104,
+            "y": -230,
+            "scale.x": 0.6980467016225123,
+            "scale.y": 0.6980467016225123
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "0",
+          "id": "5c6e556f-23b7-4a66-ac03-b3149d900e4a",
+          "info": {
+            "editorName": "resources_bar",
+            "x": 140,
+            "y": 34.50000762939453
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "0",
+          "id": "16ca1971-f76d-4a3a-a18d-07dd1c32dc1b",
+          "info": {
+            "editorName": "power_bar",
+            "x": 381,
+            "y": 35
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "0",
+          "id": "58083424-5a2d-43c3-9016-95c1cd8fafbf",
+          "info": {
+            "editorName": "housing_bar",
+            "x": 618,
+            "y": 33
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "1",
+          "id": "8a590784-4397-40d6-9ccd-2ac29146ca55",
+          "info": {
+            "editorName": "Total_Count",
+            "x": 895,
+            "y": 13
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "2",
+          "id": "391328bb-416d-4915-a2f6-1dd977c12197",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "glassPanel"
+          },
+          "info": {
+            "editorName": "glassPanel",
+            "x": 414,
+            "y": 284
           }
         }
       ]
@@ -182,13 +219,12 @@
     "5": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-      "asset": "blue_button13"
-    },
-    "6": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "blue_button01"
+      "asset": "the_map"
     }
   },
-  "prefab-table": {}
+  "prefab-table": {
+    "0": "WebContent/assets/canvas/prefabs/HealthBar.canvas",
+    "1": "WebContent/assets/canvas/prefabs/PlayerCount.canvas",
+    "2": "WebContent/assets/canvas/prefabs/Creator_HoverWindow.canvas"
+  }
 }

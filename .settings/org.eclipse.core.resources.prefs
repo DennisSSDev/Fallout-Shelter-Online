@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//WebContent/assets/canvas/prefabs/Creator_HoverWindow.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/HealthBar.js=UTF-8
+encoding//WebContent/assets/canvas/prefabs/PlayerCount.js=UTF-8
+encoding//WebContent/assets/canvas/prefabs/Room_Creator.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/instructionPanel.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/instructionsButton.js=UTF-8
+encoding//WebContent/assets/canvas/prefabs/room.js=UTF-8
