@@ -288,11 +288,6 @@
       "type": "script",
       "key": "instructionButton",
       "url": "assets/canvas/prefabs/instructionButton.js"
-    },
-    {
-      "type": "script",
-      "key": "instructionPanel",
-      "url": "assets/canvas/prefabs/instructionPanel.js"
     }
   ],
   "meta": {
