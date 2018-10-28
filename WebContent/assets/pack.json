@@ -306,15 +306,10 @@
       "type": "script",
       "key": "room",
       "url": "assets/canvas/prefabs/room.js"
-    },
-    {
-	  "type": "script",
-      "key": "instructionButton",
-      "url": "assets/canvas/prefabs/instructionButton.js"
     }
   ],
   "meta": {
-    "generated": "1540698846150",
+    "generated": "1540746989273",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
