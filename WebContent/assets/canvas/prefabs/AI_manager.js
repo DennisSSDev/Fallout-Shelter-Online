@@ -145,6 +145,11 @@ class AI_manager extends Phaser.Sprite {
 				c.executing_command = false;
 			});
 		}
+		if(this.aliveCitizens.length <= 0){
+			this.game.gameOverScreen.alpha = 1;
+			this.game.gameOverScreen.children[0].input.enabled = true;
+			//this.game.paused = true;
+		}
 	}
 	
 	collisionCallback(c,e){//c for citizen, e for enemy

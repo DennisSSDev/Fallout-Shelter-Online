@@ -300,6 +300,52 @@
             "x": 709,
             "y": 91
           }
+        },
+        {
+          "type": "group",
+          "id": "e8ff2710-ed74-40d0-a607-95fd52a1113a",
+          "info": {
+            "editorName": "group",
+            "x": -45,
+            "y": -54,
+            "alpha": 0,
+            "setAll": [],
+            "children": [
+              {
+                "type": "button",
+                "id": "9fcb9022-ed0b-4975-80ac-784a6633b967",
+                "asset": "10",
+                "info": {
+                  "editorName": "red_button",
+                  "x": 333,
+                  "y": 406,
+                  "scale.x": 2.4641176784208874,
+                  "scale.y": 2.9396432652201105
+                }
+              },
+              {
+                "type": "text",
+                "id": "f928febd-b99b-4bd4-9b13-84df2e8e98e7",
+                "info": {
+                  "editorName": "text",
+                  "x": 429,
+                  "y": 431,
+                  "text": "Game Over",
+                  "style.fontSize": 50
+                }
+              },
+              {
+                "type": "text",
+                "id": "7985439a-f2ec-47d0-8614-af986fd0cb20",
+                "info": {
+                  "editorName": "text1",
+                  "x": 485,
+                  "y": 478,
+                  "text": "Return to menu\r\n"
+                }
+              }
+            ]
+          }
         }
       ]
     }
@@ -355,6 +401,11 @@
       "file": "WebContent/assets/pack.json",
       "section": "level",
       "asset": "metalPanel_yellow"
+    },
+    "10": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "red_button00"
     }
   },
   "prefab-table": {
