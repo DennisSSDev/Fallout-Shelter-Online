@@ -1,0 +1,103 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "citizen",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "c97acdb7-4c79-4e52-8169-4fe1a82b9c77",
+    "info": {
+      "editorName": "root",
+      "setAll": [],
+      "children": [{
+        "type": "spritesheet",
+        "id": "06936a07-cb8f-483f-ba23-f0c61634e89d",
+        "asset": "0",
+        "info": {
+          "editorName": "adventurer_tilesheet",
+          "scale.x": 0.7,
+          "scale.y": 0.7,
+          "animations": [
+            {
+              "name": "walk",
+              "frameRate": 6,
+              "loop": true,
+              "frames": [
+                "9",
+                "10"
+              ]
+            },
+            {
+              "name": "attack",
+              "frameRate": 7,
+              "loop": true,
+              "frames": [
+                "13",
+                "14",
+                "11",
+                "12"
+              ]
+            },
+            {
+              "name": "dead",
+              "frameRate": 1,
+              "killOnComplete": true,
+              "frames": ["19"]
+            },
+            {
+              "name": "jump",
+              "frameRate": 1,
+              "loop": true,
+              "frames": ["1"]
+            },
+            {
+              "name": "idle",
+              "frameRate": 3,
+              "loop": true,
+              "frames": [
+                "0",
+                "23"
+              ]
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "level",
+    "asset": "adventurer_tilesheet",
+    "sprite": "0"
+  }},
+  "prefab-table": {}
+}

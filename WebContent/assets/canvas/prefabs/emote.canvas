@@ -1,0 +1,60 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "emote",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "d059e07a-abd5-4ad9-9079-45d0ca215a35",
+    "info": {
+      "editorName": "root",
+      "prefabOverride": ["position"],
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "bbf21efd-38f8-447a-b074-560db6d46487",
+        "asset-ref": {
+          "file": "WebContent/assets/pack.json",
+          "section": "level",
+          "asset": "blob"
+        },
+        "info": {
+          "editorName": "blob",
+          "prefabOverride": ["position"],
+          "scale.x": 0.2352942404610561,
+          "scale.y": 0.2352942404610561
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {},
+  "prefab-table": {}
+}

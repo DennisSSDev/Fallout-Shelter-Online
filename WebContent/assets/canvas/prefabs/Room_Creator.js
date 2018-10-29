@@ -25,6 +25,7 @@ class Room_Creator extends Phaser.Sprite {
 		this.events.onInputOut.add(this.removeTint, this); 
 		this.events.onInputUp.add(this.construct, this);
 		this.room_type = null;
+		this.stat = 0;//will be populated by based on creations for increasing the stats of the game
 	}
 	
 	/* sprite-methods-begin */
@@ -37,19 +38,26 @@ class Room_Creator extends Phaser.Sprite {
 		this.tint = 0xffffff;
 	}
 	construct(){
-		if(this.assigned_key == "upgrade"){
+		if(this.assigned_key == "shoppingBasket"){
 			//upgrade the parent;
+		}
+		else if(this.assigned_key == "cross"){
+			this.room_type = new Creator_HoverWindow(this.game, this.obj_creator.x, this.obj_creator.y);
+			this.game.add.existing(this.room_type);
+			this.selfDestruct();
 		}
 		else if(this.assigned_key == "home"){
 			//build new home and destroy the parent;
 			this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "housing_room");
 			this.game.add.existing(this.room_type);
+			this.bringCharToFront();
 			this.selfDestruct();
 		}
 		else if(this.assigned_key == "power"){
 			//build new home and destroy the parent
 			this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "energy_room");
 			this.game.add.existing(this.room_type);
+			this.bringCharToFront();
 			this.selfDestruct();
 		}
 		else{
@@ -58,13 +66,17 @@ class Room_Creator extends Phaser.Sprite {
 	}
 	
 	selfDestruct(){
-		if(this.assigned_key == "power")
+		if(this.assigned_key == "power" || this.assigned_key == "cross")
 			this.obj_creator.option_1.destroy();
 		else
 			this.obj_creator.option_2.destroy();
 		
 		this.obj_creator.destroy();
 		this.destroy();
+	}
+	
+	bringCharToFront(){
+		this.game.AI_MANAGER.aliveCitizens.forEach(c => this.game.world.bringToTop(c));
 	}
 	/* sprite-methods-end */
 }

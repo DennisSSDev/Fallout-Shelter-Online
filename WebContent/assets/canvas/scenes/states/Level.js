@@ -64,6 +64,14 @@ class Level extends Phaser.State {
 		var _housing_bar = new HealthBar(this.game);
 		_housing_bar.position.setTo(618.0, 33.0);
 		
+		this.add.sprite(143.0, 91.0, 'metalPanel_blue');
+		
+		this.add.sprite(329.0, 91.0, 'metalPanel_green');
+		
+		this.add.sprite(536.0, 91.0, 'metalPanel_red');
+		
+		this.add.sprite(709.0, 91.0, 'metalPanel_yellow');
+		
 		
 		var _Total_Count = new PlayerCount(this.game, 895.0, 13.0);
 		this.add.existing(_Total_Count);
@@ -71,7 +79,35 @@ class Level extends Phaser.State {
 		var _glassPanel = new Creator_HoverWindow(this.game, 414.0, 284.0);
 		this.add.existing(_glassPanel);
 		
+		var _glassPanel_2 = new Creator_HoverWindow(this.game, 661.0, 285.0);
+		this.add.existing(_glassPanel_2);
 		
+		var _glassPanel_3 = new Creator_HoverWindow(this.game, 907.0, 283.0);
+		this.add.existing(_glassPanel_3);
+		
+		var _glassPanel_4 = new Creator_HoverWindow(this.game, 414.0, 489.0);
+		this.add.existing(_glassPanel_4);
+		
+		var _glassPanel_5 = new Creator_HoverWindow(this.game, 661.0, 489.0);
+		this.add.existing(_glassPanel_5);
+		
+		var _glassPanel_6 = new Creator_HoverWindow(this.game, 907.0, 487.0);
+		this.add.existing(_glassPanel_6);
+		
+		var _dragBomb = new dragItem(this.game, 170, 105);
+		this.add.existing(_dragBomb);
+		
+		/*
+		var _adventurer_tilesheet = new citizen(this.game, 420.0, 386.0);
+		this.add.existing(_adventurer_tilesheet);
+		*/
+		var _AI_manager = new AI_manager(this.game, 0, 0, null, null, 3);
+		this.add.existing(_AI_manager);
+		
+		this.game.AI_MANAGER = _AI_manager // global access
+		console.log(this.game.AI_MANAGER);
+		
+		//this.add.existing();
 		this.game.world.setBounds(-150, -150, 1400, 1100);
 		this.setupInput();
 	}

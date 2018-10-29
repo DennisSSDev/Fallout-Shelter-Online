@@ -1,7 +1,12 @@
 eclipse.preferences.version=1
+encoding//WebContent/assets/canvas/prefabs/AI_manager.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/Creator_HoverWindow.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/HealthBar.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/PlayerCount.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/Room_Creator.js=UTF-8
+encoding//WebContent/assets/canvas/prefabs/citizen.js=UTF-8
+encoding//WebContent/assets/canvas/prefabs/dragItem.js=UTF-8
+encoding//WebContent/assets/canvas/prefabs/emote.js=UTF-8
+encoding//WebContent/assets/canvas/prefabs/enemy.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/instructionButton.js=UTF-8
 encoding//WebContent/assets/canvas/prefabs/room.js=UTF-8

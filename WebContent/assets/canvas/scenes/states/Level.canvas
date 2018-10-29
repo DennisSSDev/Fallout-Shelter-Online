@@ -4,7 +4,7 @@
     "className": "Level",
     "sceneWidth": 1024,
     "sceneHeight": 768,
-    "generateOnSave": true,
+    "generateOnSave": false,
     "enableStepping": false,
     "lang": "JAVA_SCRIPT_6",
     "baseClass": "Phaser.State",
@@ -185,6 +185,121 @@
             "x": 414,
             "y": 284
           }
+        },
+        {
+          "type": "prefab",
+          "prefab": "2",
+          "id": "9a88b4fc-9779-4855-814e-8dc987bbf7f1",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "glassPanel"
+          },
+          "info": {
+            "editorName": "glassPanel_2",
+            "x": 661,
+            "y": 285
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "2",
+          "id": "0e92e8c5-bb1e-45f2-bf56-a2e6f46dfa2e",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "glassPanel"
+          },
+          "info": {
+            "editorName": "glassPanel_3",
+            "x": 907,
+            "y": 283
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "2",
+          "id": "9c671a3d-e521-4cad-9ec7-be14e2d31f24",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "glassPanel"
+          },
+          "info": {
+            "editorName": "glassPanel_4",
+            "x": 414,
+            "y": 489
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "2",
+          "id": "0427cfac-b4ca-4b8d-bdae-aee77a4762fe",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "glassPanel"
+          },
+          "info": {
+            "editorName": "glassPanel_5",
+            "x": 661,
+            "y": 489
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "2",
+          "id": "d6fc59b9-ac00-474e-93fa-e06c08d10f41",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "level",
+            "asset": "glassPanel"
+          },
+          "info": {
+            "editorName": "glassPanel_6",
+            "x": 907,
+            "y": 487
+          }
+        },
+        {
+          "type": "image",
+          "id": "83961c57-83a6-4ddc-9b4f-581ce3aeb7f9",
+          "asset": "6",
+          "info": {
+            "editorName": "metalPanel_blue",
+            "x": 143,
+            "y": 91
+          }
+        },
+        {
+          "type": "image",
+          "id": "d4c57253-fc91-404b-aa10-8663b50097fc",
+          "asset": "7",
+          "info": {
+            "editorName": "metalPanel_green",
+            "x": 329,
+            "y": 91
+          }
+        },
+        {
+          "type": "image",
+          "id": "6903aefe-6639-454b-94c3-94ab0f68ab18",
+          "asset": "8",
+          "info": {
+            "editorName": "metalPanel_red",
+            "x": 536,
+            "y": 91
+          }
+        },
+        {
+          "type": "image",
+          "id": "65101f60-f770-4ffc-bd69-769767c19ce0",
+          "asset": "9",
+          "info": {
+            "editorName": "metalPanel_yellow",
+            "x": 709,
+            "y": 91
+          }
         }
       ]
     }
@@ -220,6 +335,26 @@
       "file": "WebContent/assets/pack.json",
       "section": "level",
       "asset": "the_map"
+    },
+    "6": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "metalPanel_blue"
+    },
+    "7": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "metalPanel_green"
+    },
+    "8": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "metalPanel_red"
+    },
+    "9": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "metalPanel_yellow"
     }
   },
   "prefab-table": {

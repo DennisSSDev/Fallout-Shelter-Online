@@ -24,7 +24,7 @@ class PlayerCount extends Phaser.Text {
 			);
 		this.width -= 60;
 		this.height -= 80;
-		this.updateCount(100);
+		this.updateCount(3);
 		
 	}
 	

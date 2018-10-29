@@ -273,7 +273,7 @@
       "key": "housing_room",
       "url": "assets/maps/housing_room.png",
       "overwrite": false
-	},
+    },
     {
       "type": "script",
       "key": "instructionButton",
@@ -283,6 +283,18 @@
       "type": "image",
       "key": "the_map",
       "url": "assets/maps/the_map.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "blob",
+      "url": "assets/images/blob.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "bomb",
+      "url": "assets/images/bomb.png",
       "overwrite": false
     }
   ],
@@ -311,10 +323,35 @@
       "type": "script",
       "key": "room",
       "url": "assets/canvas/prefabs/room.js"
+    },
+    {
+      "type": "script",
+      "key": "citizen",
+      "url": "assets/canvas/prefabs/citizen.js"
+    },
+    {
+      "type": "script",
+      "key": "AI_manager",
+      "url": "assets/canvas/prefabs/AI_manager.js"
+    },
+    {
+      "type": "script",
+      "key": "emote",
+      "url": "assets/canvas/prefabs/emote.js"
+    },
+    {
+      "type": "script",
+      "key": "enemy",
+      "url": "assets/canvas/prefabs/enemy.js"
+    },
+    {
+      "type": "script",
+      "key": "dragItem",
+      "url": "assets/canvas/prefabs/dragItem.js"
     }
   ],
   "meta": {
-    "generated": "1540698846150",
+    "generated": "1540780646584",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

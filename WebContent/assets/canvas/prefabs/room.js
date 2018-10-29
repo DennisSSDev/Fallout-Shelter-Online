@@ -19,6 +19,51 @@ class room extends Phaser.Sprite {
 		super(aGame, aX, aY, aKey || 'energy_room', aFrame  == undefined || aFrame == null? null : aFrame);
 		this.scale.setTo(0.369, 0.393);
 		
+		this.option_1 = null;
+		this.option_2 = null;
+		
+		this.inputEnabled = true;
+		this.events.onInputOver.add(this.onHover, this);
+		this.events.onInputOut.add(this.onLeftHover, this);
+		this.events.onInputUp.add(this.dispenceOptions, this);
+		
+	}
+	
+	onHover(){
+		this.addTint();
+	}
+	onLeftHover(){
+		this.removeTint();
+	}
+	
+	dispenceOptions(){
+		if(this.option_1 == null)
+			this.createOptions();
+		else
+			this.removeOptions();
+	}
+	
+	addTint(){
+		this.tint = 0xff8000;
+	}
+	removeTint(){
+		this.tint = 0xffffff;
+	}
+	
+	createOptions(){
+		console.log("enetered");
+		this.option_1 = new Room_Creator(this.game,this.x+25, this.y+50,'shoppingBasket', null, this);
+		this.option_2 = new Room_Creator(this.game, this.x+125, this.y+50, 'cross', null, this);
+		this.game.add.existing(this.option_1);
+		this.game.add.existing(this.option_2);
+	}
+	
+	removeOptions(){
+		console.log("removed options");
+		this.option_1.destroy();
+		this.option_2.destroy();
+		this.option_1 = null;
+		this.option_2 = null;
 	}
 	
 	/* sprite-methods-begin */
