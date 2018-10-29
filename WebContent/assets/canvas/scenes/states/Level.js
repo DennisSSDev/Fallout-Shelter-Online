@@ -97,10 +97,6 @@ class Level extends Phaser.State {
 		var _dragBomb = new dragItem(this.game, 170, 105);
 		this.add.existing(_dragBomb);
 		
-		/*
-		var _adventurer_tilesheet = new citizen(this.game, 420.0, 386.0);
-		this.add.existing(_adventurer_tilesheet);
-		*/
 		var _AI_manager = new AI_manager(this.game, 0, 0, null, null, 3);
 		this.add.existing(_AI_manager);
 		
