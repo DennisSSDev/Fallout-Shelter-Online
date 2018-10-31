@@ -100,23 +100,27 @@ class Level extends Phaser.State {
 		this.add.existing(_AI_manager);
 		
 		this.game.AI_MANAGER = _AI_manager // global access
-		console.log(this.game.AI_MANAGER);
 		
 		
 		var _group = this.add.group();
 		_group.position.setTo(-45.0, -54.0);
-		
 		var _red_button = this.add.button(333.0, 406.0, 'red_button00', function(){this.game.state.start("Menu")}, this, null, null, null, null, _group);
 		_red_button.scale.setTo(2.4641176784208874, 2.9396432652201105);
-		//_red_button.inputEnabled = false;
 		this.add.text(429.0, 431.0, 'Game Over', {"font":"bold 50px Arial"}, _group);
-		
 		this.add.text(485.0, 478.0, 'Return to menu\n', {"font":"bold 20px Arial"}, _group);
-		
 		_group.alpha = 0;
 		_group.children[0].input.enabled = false;
 		this.game.gameOverScreen = _group;
-		//this.add.existing();
+		
+		var _group1 = this.add.group();
+		this.add.sprite(402.0, 213.5, 'red_button02', null, _group1);
+		this.add.text(415.0, 221.0, 'Wave Incoming!!!\n', {"font":"bold 20px Arial"}, _group1);
+		_group1.alpha = 0.0;
+		
+		this.game.alertMessage = _group1;
+		
+		
+		
 		this.game.world.setBounds(-150, -150, 1400, 1100);
 		this.setupInput();
 	}

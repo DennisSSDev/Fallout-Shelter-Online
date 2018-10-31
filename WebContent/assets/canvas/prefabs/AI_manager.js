@@ -74,12 +74,14 @@ class AI_manager extends Phaser.Sprite {
 	}
 	
 	beginRound(){
+		console.log("I'm spawning enemies");
 		this.round++;
 		this.totalEnemyCount = this.round*2;
 		
 		this.totalEnemyCount = this.clamp(this.totalEnemyCount, 1, 9);
 		setTimeout(()=>{
 			this.spawnEnemies(this.totalEnemyCount);//add roud into this later
+			this.game.alertMessage.alpha = 1;
 			this.alertCitizens();
 		}, 10000);
 		// make all alive payers alarmed
@@ -94,11 +96,12 @@ class AI_manager extends Phaser.Sprite {
 		let randXpos = -1;
 		for(let i = 0; i < amount; i++)
 		{
-			randXpos = this.getRandomInt(-400, 80);
-			this.aliveEnemies.push(new enemy(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], null, null, this.getRandomInt(3500, 6500), round + this.getRandomInt(1, 7)));//randomize stats
+			randXpos = this.getRandomInt(-350, 80);
+			this.aliveEnemies.push(new enemy(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], null, null, this.getRandomInt(3500, 6500), this.round + this.getRandomInt(1, 7)));//randomize stats
 		}
 		this.aliveEnemies.forEach(c => {this.game.add.existing(c)});
 	}
+	
 	spawnCitizen(amount) {
 		let selectedSkin = '';
 		let randSkin = -1;
@@ -134,19 +137,32 @@ class AI_manager extends Phaser.Sprite {
 		});
 		this.game.physics.arcade.collide(this.aliveCitizens, this.aliveEnemies, this.collisionCallback, null, this);
 		this.game.physics.arcade.collide(this.allBullets, this.aliveEnemies, this.bulletCollisionCallback, null, this);
+		
+		this.aliveEnemies.forEach(e => {
+			if(e != null){
+				if(e.x > 1200){
+					e.x = -100;
+					e.kill();
+					this.totalEnemyCount--;
+					e = null;
+				}
+			}
+		});
+		
+		
 		if(this.totalEnemyCount <= 0){
-			this.beginRound();
 			this.aliveCitizens.forEach(c => {
 				c.CURRENT_STATE = c.AI_STATES.IDLE;
 				c.executing_command = false;
 			});
+			this.beginRound();
 		}
 		if(this.aliveCitizens.length <= 0){
 			this.game.gameOverScreen.alpha = 1;
 			this.game.world.bringToTop(this.game.gameOverScreen);
 			this.game.gameOverScreen.children[0].input.enabled = true;
-			this.game.gameOverScreen.x = this.game.camera.width / 2;
-			this.game.gameOverScreen.y = this.game.camera.height / 2;
+			this.game.gameOverScreen.x = this.game.camera.x;
+			this.game.gameOverScreen.y = this.game.camera.y;
 		}
 	}
 	
@@ -160,6 +176,10 @@ class AI_manager extends Phaser.Sprite {
 	bulletCollisionCallback(e, b){// b for bullet, e for enemy
 		b.kill();
 		e.hit();
+		if(e.health <= 0){
+			e.kill();
+			this.totalEnemyCount--;
+		}
 	}
 	clamp(num, min, max) {
 		  return num <= min ? min : num >= max ? max : num;

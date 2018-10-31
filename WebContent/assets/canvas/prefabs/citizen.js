@@ -27,11 +27,11 @@ class citizen extends Phaser.Sprite {
 		this.timer = this.game.time.create(false);
 		this.timer.loop(250, this.updateState, this);
 		
-		this.weapon = this.game.add.weapon(5, 'cursor_pointer3D');
+		this.weapon = this.game.add.weapon(3, 'cursor_pointer3D');
 		this.weapon.bulletLifespan = 2500;
 		this.weapon.bulletKillType = Phaser.Weapon.KILL_LIFESPAN ;
 	    this.weapon.bulletSpeed = 150;
-	    this.weapon.fireRate = 12;
+	    this.weapon.fireRate = 1;
 		
 		this.executing_command = false;
 		this.health = this.getRandomInt(3, 8);

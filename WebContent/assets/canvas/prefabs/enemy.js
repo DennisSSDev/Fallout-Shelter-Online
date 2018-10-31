@@ -38,18 +38,10 @@ class enemy extends Phaser.Sprite {
 	
 	updateState(){
 		this.body.moveTo(this.moveTime, this.targetLoc, Phaser.ANGLE_RIGHT);
-		if(this.x > 1200){
-			this.kill();
-			this.game.AI_MANAGER.totalEnemyCount--;
-		}
 	}
 	hit(){
 		//instantiate a particle effect
 		this.health--;
-		if(this.health <= 0){
-			this.kill();
-			this.game.AI_MANAGER.totalEnemyCount--;
-		}
 	}
 	
 	/* sprite-methods-begin */

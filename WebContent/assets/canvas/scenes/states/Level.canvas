@@ -4,7 +4,7 @@
     "className": "Level",
     "sceneWidth": 1024,
     "sceneHeight": 768,
-    "generateOnSave": false,
+    "generateOnSave": true,
     "enableStepping": false,
     "lang": "JAVA_SCRIPT_6",
     "baseClass": "Phaser.State",
@@ -346,6 +346,36 @@
               }
             ]
           }
+        },
+        {
+          "type": "group",
+          "id": "8e89a4fc-392e-4233-a55e-0cd7f28d25fc",
+          "info": {
+            "editorName": "group1",
+            "setAll": [],
+            "children": [
+              {
+                "type": "image",
+                "id": "98b04922-7059-46de-bf02-fb1821c0ea42",
+                "asset": "11",
+                "info": {
+                  "editorName": "red_button1",
+                  "x": 402,
+                  "y": 213.5
+                }
+              },
+              {
+                "type": "text",
+                "id": "8811a352-bfab-4977-8649-1485d67091d9",
+                "info": {
+                  "editorName": "text2",
+                  "x": 415,
+                  "y": 221,
+                  "text": "Wave Incoming!!!\r\n"
+                }
+              }
+            ]
+          }
         }
       ]
     }
@@ -406,6 +436,11 @@
       "file": "WebContent/assets/pack.json",
       "section": "level",
       "asset": "red_button00"
+    },
+    "11": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "red_button02"
     }
   },
   "prefab-table": {
