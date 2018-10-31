@@ -33,7 +33,7 @@ class enemy extends Phaser.Sprite {
 		this.body.stopVelocityOnCollide = false;
 		this.inputEnabled = true;
 		this.events.onInputUp.add(this.hit, this);
-		
+		this.loot = new Resource(this.game, this.x, this.y, );
 	}
 	
 	updateState(){
@@ -42,6 +42,12 @@ class enemy extends Phaser.Sprite {
 	hit(){
 		//instantiate a particle effect
 		this.health--;
+	}
+	
+	spawnLoot(){
+		this.loot.x = this.x;
+		this.loot.y = this.y;
+		this.game.add.existing(this.loot);
 	}
 	
 	/* sprite-methods-begin */

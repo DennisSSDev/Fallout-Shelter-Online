@@ -1,0 +1,61 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Resource",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT_6",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "b391e2e2-bc37-4fe3-aeb7-d9dc2e36b4f2",
+    "info": {
+      "editorName": "root",
+      "prefabOverride": ["position"],
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "cfb5643b-c8e5-43cf-9a10-384bdf0308d5",
+        "asset-ref": {
+          "file": "WebContent/assets/pack.json",
+          "section": "level",
+          "asset": "environments4",
+          "sprite": "elementStone007"
+        },
+        "info": {
+          "editorName": "elementStone",
+          "prefabOverride": ["position"],
+          "scale.x": 0.6790204717571736,
+          "scale.y": 0.6790204717571736
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {},
+  "prefab-table": {}
+}

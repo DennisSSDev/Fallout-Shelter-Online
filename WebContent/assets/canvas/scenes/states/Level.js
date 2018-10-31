@@ -56,12 +56,16 @@ class Level extends Phaser.State {
 		
 		var _resources_bar = new HealthBar(this.game);
 		_resources_bar.position.setTo(140.0, 34.50000762939453);
+		this.game.resource_bar = _resources_bar;
+		_resources_bar.setTick(false);
 		
 		var _power_bar = new HealthBar(this.game);
 		_power_bar.position.setTo(381.0, 35.0);
+		this.game.power_bar = _power_bar;
 		
 		var _housing_bar = new HealthBar(this.game);
 		_housing_bar.position.setTo(618.0, 33.0);
+		this.game.housing_bar = _housing_bar;
 		
 		this.add.sprite(143.0, 91.0, 'metalPanel_blue');
 		

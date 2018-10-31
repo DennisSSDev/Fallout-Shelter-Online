@@ -58,8 +58,8 @@ class HealthBar extends Phaser.Group {
 	}
 	
 	clampScale(){
-		if(this.status > .618)
-			this.status = .617;
+		if(this.status > .674)
+			this.status = .674;
 		else if(this.status < 0)
 			this.status = 0;
 	}

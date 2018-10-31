@@ -44,27 +44,32 @@ class Room_Creator extends Phaser.Sprite {
 		else if(this.assigned_key == "cross"){
 			this.room_type = new Creator_HoverWindow(this.game, this.obj_creator.x, this.obj_creator.y);
 			this.game.add.existing(this.room_type);
+			this.game.resource_bar.increaseBar(.05);
 			this.selfDestruct();
 		}
 		else if(this.assigned_key == "home"){
 			//build new home and destroy the parent;
-			this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "housing_room");
-			this.game.add.existing(this.room_type);
-			this.bringCharToFront();
-			this.selfDestruct();
+			if(this.allowConstruct(this.game.resource_bar, .05)){
+				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "housing_room");
+				this.game.add.existing(this.room_type);
+				this.bringCharToFront();
+				this.game.resource_bar.depleteBar(.25);
+				this.selfDestruct();
+			}
 		}
 		else if(this.assigned_key == "power"){
 			//build new home and destroy the parent
-			this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "energy_room");
-			this.game.add.existing(this.room_type);
-			this.bringCharToFront();
-			this.selfDestruct();
+			if(this.allowConstruct(this.game.resource_bar, .05)){
+				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "energy_room");
+				this.game.add.existing(this.room_type);
+				this.bringCharToFront();
+				this.game.resource_bar.depleteBar(.27);// cost is a bit higher than housing
+				this.selfDestruct();
+			}
 		}
 		else{
 			console.log("was unable to construct a room");
 		}
-		
-		
 	}
 	
 	selfDestruct(){
@@ -77,11 +82,16 @@ class Room_Creator extends Phaser.Sprite {
 		this.destroy();
 	}
 	
+	allowConstruct(bar, amount){
+		if(bar.status - amount < 0)
+			return false;
+		else
+			return true;
+	}
+	
 	bringCharToFront(){
 		this.game.AI_MANAGER.aliveCitizens.forEach(c => this.game.world.bringToTop(c));
 		this.game.AI_MANAGER.aliveEnemies.forEach(c => this.game.world.bringToTop(c));
 	}
-	/* sprite-methods-end */
 }
-/* --- end generated code --- */
-// -- user code here --
+

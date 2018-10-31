@@ -21,7 +21,7 @@ class AI_manager extends Phaser.Sprite {
 		this.validFloors = {'0': 392, '1': 596};//secretly there should only be 2 valid floors for now
 		this.round = 0;
 		this.citizenTypes = Object.seal({
-			'0': 'adventurerer_tilesheet',
+			'0': 'adventurer_tilesheet',
 			'1': 'female_tilesheet',
 			'2': 'player_tilesheet',
 			'3': 'soldier_tilesheet'
@@ -97,7 +97,7 @@ class AI_manager extends Phaser.Sprite {
 		for(let i = 0; i < amount; i++)
 		{
 			randXpos = this.getRandomInt(-350, 80);
-			this.aliveEnemies.push(new enemy(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], null, null, this.getRandomInt(3500, 6500), this.round + this.getRandomInt(1, 7)));//randomize stats
+			this.aliveEnemies.push(new enemy(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], this.monsterTypes[this.getRandomInt(0,4)], null, this.getRandomInt(3500, 6500), this.round + this.getRandomInt(1, 7)));//randomize stats
 		}
 		this.aliveEnemies.forEach(c => {this.game.add.existing(c)});
 	}
@@ -110,7 +110,7 @@ class AI_manager extends Phaser.Sprite {
 		{
 			randSkin = this.getRandomInt(0, 4);
 			randXpos = this.getRandomInt(401, 1199);
-			this.aliveCitizens.push(new citizen(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], 'adventurer_tilesheet'));
+			this.aliveCitizens.push(new citizen(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], this.citizenTypes[this.getRandomInt(0,4)]));
 		}
 		this.aliveCitizens.forEach(c => {this.game.add.existing(c); this.weapons.push(c.weapon);});
 	}
@@ -151,6 +151,7 @@ class AI_manager extends Phaser.Sprite {
 		
 		
 		if(this.totalEnemyCount <= 0){
+			this.game.alertMessage.alpha = 0;
 			this.aliveCitizens.forEach(c => {
 				c.CURRENT_STATE = c.AI_STATES.IDLE;
 				c.executing_command = false;
@@ -177,6 +178,7 @@ class AI_manager extends Phaser.Sprite {
 		b.kill();
 		e.hit();
 		if(e.health <= 0){
+			e.spawnLoot();
 			e.kill();
 			this.totalEnemyCount--;
 		}

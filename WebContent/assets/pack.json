@@ -94,8 +94,8 @@
       "type": "spritesheet",
       "key": "alienYellow",
       "url": "assets/sprites/Enemies_SpriteSheet/alienYellow.png",
-      "frameWidth": 66,
-      "frameHeight": 92,
+      "frameWidth": 68,
+      "frameHeight": 87,
       "frameMax": -1,
       "margin": 0,
       "spacing": 0
@@ -296,6 +296,18 @@
       "key": "bomb",
       "url": "assets/images/bomb.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "blob_home",
+      "url": "assets/images/specific_UI_and_others/blob_home.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "blob_power",
+      "url": "assets/images/specific_UI_and_others/blob_power.png",
+      "overwrite": false
     }
   ],
   "level_only": [
@@ -348,10 +360,15 @@
       "type": "script",
       "key": "dragItem",
       "url": "assets/canvas/prefabs/dragItem.js"
+    },
+    {
+      "type": "script",
+      "key": "Resource",
+      "url": "assets/canvas/prefabs/Resource.js"
     }
   ],
   "meta": {
-    "generated": "1540780646584",
+    "generated": "1541023052602",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

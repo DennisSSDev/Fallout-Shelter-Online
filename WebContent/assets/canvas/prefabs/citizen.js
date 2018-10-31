@@ -99,7 +99,12 @@ class citizen extends Phaser.Sprite {
 			if(this.CURRENT_STATE === this.AI_STATES.EMOTE){
 				if(!this.spawnedEmote){
 					this.spawnedEmote = true;
-					this.personalEmote = new emote(this.game, this.x+50, this.y-30, null, null, this);
+					let key_;
+					if(Math.random() > .5)
+						key_ = 'blob_home';
+					else
+						key_ = 'blob_power';
+					this.personalEmote = new emote(this.game, this.x+50, this.y-30, key_, null, this);
 					this.game.add.existing(this.personalEmote);	
 				}
 				else if(this.spawnedEmote && this.personalEmote == null){
