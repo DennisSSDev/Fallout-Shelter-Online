@@ -32,7 +32,8 @@ class AI_manager extends Phaser.Sprite {
 			'2': 'alienGreen',
 			'3': 'alienYellow'
 		});
-		
+		this.alarm = this.game.add.audio("FoS_Alarm");
+		this.battleMusic = this.game.add.audio("Under_Attack");
 		this.aliveCitizens = [];
 		this.aliveEnemies = [];
 		this.weapons = []
@@ -74,12 +75,14 @@ class AI_manager extends Phaser.Sprite {
 	}
 	
 	beginRound(){
-		console.log("I'm spawning enemies");
 		this.round++;
 		this.totalEnemyCount = this.round*2;
 		
 		this.totalEnemyCount = this.clamp(this.totalEnemyCount, 1, 9);
 		setTimeout(()=>{
+			this.game.background_music.fadeOut(2000);
+			this.alarm.fadeIn(1000);
+			this.battleMusic.fadeIn(2000);
 			this.spawnEnemies(this.totalEnemyCount);//add roud into this later
 			this.game.alertMessage.alpha = 1;
 			this.alertCitizens();
@@ -156,6 +159,8 @@ class AI_manager extends Phaser.Sprite {
 				c.CURRENT_STATE = c.AI_STATES.IDLE;
 				c.executing_command = false;
 			});
+			this.game.background_music.fadeIn(2000);
+			this.battleMusic.fadeOut(2500);
 			this.beginRound();
 		}
 		if(this.aliveCitizens.length <= 0){

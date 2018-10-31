@@ -32,6 +32,10 @@ class Level extends Phaser.State {
 	}
 	
 	create() {
+		//add audio
+		let background_music = this.game.add.audio("Idle");
+		
+		
 		var _colored_grass = this.add.sprite(-212.0, -379.0, 'colored_grass');
 		_colored_grass.scale.setTo(1.3922020086315436, 1.3922020086315436);
 		
@@ -123,7 +127,8 @@ class Level extends Phaser.State {
 		
 		this.game.alertMessage = _group1;
 		
-		
+		this.game.background_music = background_music;
+		background_music.play();
 		
 		this.game.world.setBounds(-150, -150, 1400, 1100);
 		this.setupInput();

@@ -365,10 +365,58 @@
       "type": "script",
       "key": "Resource",
       "url": "assets/canvas/prefabs/Resource.js"
+    },
+    {
+      "type": "audio",
+      "key": "build",
+      "urls": ["assets/audio/build.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "FoS_Alarm",
+      "urls": ["assets/audio/FoS_Alarm.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "click1",
+      "urls": ["assets/audio/click1.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "Idle",
+      "urls": ["assets/audio/Idle.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "new_member",
+      "urls": ["assets/audio/new_member.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "Hover_Build",
+      "urls": ["assets/audio/Hover_Build.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "Hover_Click",
+      "urls": ["assets/audio/Hover_Click.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "Under_Attack",
+      "urls": ["assets/audio/Under_Attack.mp3"],
+      "autoDecode": true
     }
   ],
   "meta": {
-    "generated": "1541023052602",
+    "generated": "1541024708574",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
