@@ -25,7 +25,6 @@ class Level extends Phaser.State {
 		this.scale.pageAlignHorizontally = true;
 		this.scale.pageAlignVertically = true;
 		this.physics.startSystem(Phaser.Physics.ARCADE);
-		
 	}
 	
 	preload () {	

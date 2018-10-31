@@ -16,11 +16,15 @@ class enemy extends Phaser.Sprite {
 	 * @param {any} aFrame If this Sprite is using part of a sprite sheet or texture atlas you can specify the exact frame to use by giving a string or numeric index.
 	 */
 	constructor(aGame, aX, aY, aKey, aFrame, timeToTakeToMove, health) {
+		//if the enemy iis of certain health value, change the scale
+		
 		super(aGame, aX, aY, aKey || 'alienBlue', aFrame  == undefined || aFrame == null? 0 : aFrame);
 		this.scale.setTo(0.9, 0.9);
 		this.moveTime = timeToTakeToMove;
 		this.health = health;
 		this.game.physics.arcade.enable(this);
+		this.body.checkCollision.down = false;
+		this.body.checkCollision.left = false;
 		this.timer = this.game.time.create(false);
 		this.timer.loop(300, this.updateState, this);
 		this.timer.start();
@@ -33,14 +37,14 @@ class enemy extends Phaser.Sprite {
 	}
 	
 	updateState(){
-		if(this.y <= 392)
-			this.body.moveTo(this.moveTime, this.targetLoc, Phaser.ANGLE_LEFT);
-		else if(this.x < 1000 && this.y > 392)
-			this.body.moveTo(this.moveTime, this.targetLoc, Phaser.ANGLE_RIGHT);
-		else
-			this.body.moveTo(this.moveTime, this.targetLoc, Phaser.ANGLE_UP);
+		this.body.moveTo(this.moveTime, this.targetLoc, Phaser.ANGLE_RIGHT);
+		if(this.x > 1200){
+			this.kill();
+			this.game.AI_MANAGER.totalEnemyCount--;
+		}
 	}
 	hit(){
+		//instantiate a particle effect
 		this.health--;
 		if(this.health <= 0){
 			this.kill();

@@ -41,7 +41,6 @@ class AI_manager extends Phaser.Sprite {
 		this.spawnCitizen(startingOutCharacterCount);
 		this.totalEnemyCount = startingOutCharacterCount;
 		game.time.events.loop(Phaser.Timer.QUARTER, this.ai_Update, this);
-		
 		setTimeout(()=>{
 			this.beginRound();
 		}, 2000);
@@ -68,7 +67,6 @@ class AI_manager extends Phaser.Sprite {
 						else{
 							outRand = 0;
 						}
-						//this.stateRandomizer = this.getRandomInt(0,3);
 						c.CURRENT_STATE = outRand;
 					}
 				}
@@ -77,9 +75,10 @@ class AI_manager extends Phaser.Sprite {
 	
 	beginRound(){
 		this.round++;
-		this.totalEnemyCount = this.round*2; 
+		this.totalEnemyCount = this.round*2;
+		
+		this.totalEnemyCount = this.clamp(this.totalEnemyCount, 1, 9);
 		setTimeout(()=>{
-			this.round++;
 			this.spawnEnemies(this.totalEnemyCount);//add roud into this later
 			this.alertCitizens();
 		}, 10000);
@@ -95,47 +94,45 @@ class AI_manager extends Phaser.Sprite {
 		let randXpos = -1;
 		for(let i = 0; i < amount; i++)
 		{
-			randXpos = this.getRandomInt(-200, 50);
-			this.aliveEnemies.push(new enemy(this.game, randXpos, 596, null, null, 5000, 5));//randomize stats
+			randXpos = this.getRandomInt(-400, 80);
+			this.aliveEnemies.push(new enemy(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], null, null, this.getRandomInt(3500, 6500), round + this.getRandomInt(1, 7)));//randomize stats
 		}
-		
 		this.aliveEnemies.forEach(c => {this.game.add.existing(c)});
 	}
 	spawnCitizen(amount) {
 		let selectedSkin = '';
 		let randSkin = -1;
-		let randFloor = -1;
 		let randXpos = -1;
 		for(let i = 0; i < amount; i++)
 		{
 			randSkin = this.getRandomInt(0, 4);
-			randFloor = Math.random();
 			randXpos = this.getRandomInt(401, 1199);
-			
-			if(randFloor < .6)
-				randFloor = 1;
-			else 
-				randFloor = 0;
-			
-			this.aliveCitizens.push(new citizen(this.game, randXpos, this.validFloors[randFloor], 'adventurer_tilesheet'));
-			
+			this.aliveCitizens.push(new citizen(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], 'adventurer_tilesheet'));
 		}
-		
 		this.aliveCitizens.forEach(c => {this.game.add.existing(c); this.weapons.push(c.weapon);});
 	}
 	
 	getRandomInt(min, max) {
 		  min = Math.ceil(min);
 		  max = Math.floor(max);
-		  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+		  return Math.floor(Math.random() * (max - min)) + min;
+	}
+	
+	getRandomValidFloor(){
+		let randFloor = Math.random();
+		if(randFloor < .5)
+			randFloor = 1;
+		else
+			randFloor = 0;
+		return randFloor;
 	}
 	
 	update(){
+		this.allBullets = [];
 		this.weapons.forEach(c => {
 			this.allBullets = this.allBullets.concat(c.bullets);
 		});
 		this.game.physics.arcade.collide(this.aliveCitizens, this.aliveEnemies, this.collisionCallback, null, this);
-		
 		this.game.physics.arcade.collide(this.allBullets, this.aliveEnemies, this.bulletCollisionCallback, null, this);
 		if(this.totalEnemyCount <= 0){
 			this.beginRound();
@@ -148,7 +145,8 @@ class AI_manager extends Phaser.Sprite {
 			this.game.gameOverScreen.alpha = 1;
 			this.game.world.bringToTop(this.game.gameOverScreen);
 			this.game.gameOverScreen.children[0].input.enabled = true;
-			//this.game.paused = true;
+			this.game.gameOverScreen.x = this.game.camera.width / 2;
+			this.game.gameOverScreen.y = this.game.camera.height / 2;
 		}
 	}
 	
@@ -159,17 +157,13 @@ class AI_manager extends Phaser.Sprite {
 		this.aliveCitizens.splice(index, 1);
 		e.body.velocity.x = 0;
 	}
-	bulletCollisionCallback(b, e){// b for bullet, e for enemy{
-		console.log(this.aliveEnemies);
-		let index = this.aliveEnemies.indexOf(e);
+	bulletCollisionCallback(e, b){// b for bullet, e for enemy
 		b.kill();
-		e.kill();
-		this.totalEnemyCount--;
-		//this.aliveEnemies.splice(index, 1);// causes issues for some reason
+		e.hit();
 	}
-	/* sprite-methods-begin */
-	// -- user code here --
-	/* sprite-methods-end */
+	clamp(num, min, max) {
+		  return num <= min ? min : num >= max ? max : num;
+	}
 }
 /* --- end generated code --- */
 // -- user code here --
