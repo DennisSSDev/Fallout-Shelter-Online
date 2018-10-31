@@ -73,7 +73,6 @@ class AI_manager extends Phaser.Sprite {
 					}
 				}
 		);
-		
 	}
 	
 	beginRound(){
@@ -147,6 +146,7 @@ class AI_manager extends Phaser.Sprite {
 		}
 		if(this.aliveCitizens.length <= 0){
 			this.game.gameOverScreen.alpha = 1;
+			this.game.world.bringToTop(this.game.gameOverScreen);
 			this.game.gameOverScreen.children[0].input.enabled = true;
 			//this.game.paused = true;
 		}

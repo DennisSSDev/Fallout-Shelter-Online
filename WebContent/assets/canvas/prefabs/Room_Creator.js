@@ -63,6 +63,8 @@ class Room_Creator extends Phaser.Sprite {
 		else{
 			console.log("was unable to construct a room");
 		}
+		
+		
 	}
 	
 	selfDestruct(){
@@ -77,6 +79,7 @@ class Room_Creator extends Phaser.Sprite {
 	
 	bringCharToFront(){
 		this.game.AI_MANAGER.aliveCitizens.forEach(c => this.game.world.bringToTop(c));
+		this.game.AI_MANAGER.aliveEnemies.forEach(c => this.game.world.bringToTop(c));
 	}
 	/* sprite-methods-end */
 }
