@@ -18,11 +18,11 @@ class room extends Phaser.Sprite {
 	constructor(aGame, aX, aY, aKey, aFrame) {
 		super(aGame, aX, aY, aKey || 'energy_room', aFrame  == undefined || aFrame == null? null : aFrame);
 		this.scale.setTo(0.369, 0.393);
-		
 		this.option_1 = null;
 		this.option_2 = null;
 		this.stats = 5;
 		this.inputEnabled = true;
+		this.room_key = aKey;
 		this.events.onInputOver.add(this.onHover, this);
 		this.events.onInputOut.add(this.onLeftHover, this);
 		this.events.onInputUp.add(this.dispenceOptions, this);

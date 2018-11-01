@@ -53,8 +53,9 @@ class HealthBar extends Phaser.Group {
 	}
 	
 	update(){
-		if(this.tick)
+		if(this.tick){
 			this.depleteBar(.00005);
+		}
 	}
 	
 	clampScale(){

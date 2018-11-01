@@ -36,6 +36,7 @@ class AI_manager extends Phaser.Sprite {
 		this.alarm = this.game.add.audio("FoS_Alarm");
 		this.battleMusic = this.game.add.audio("Under_Attack");
 		this.citizenDeathSound = this.game.add.audio("groan");
+		this.newMemberSound = this.game.add.audio("new_member");
 		this.aliveCitizens = [];
 		this.aliveEnemies = [];
 		this.weapons = []
@@ -44,6 +45,7 @@ class AI_manager extends Phaser.Sprite {
 		this.spawnCitizen(startingOutCharacterCount);
 		this.totalEnemyCount = startingOutCharacterCount;
 		game.time.events.loop(Phaser.Timer.QUARTER, this.ai_Update, this);
+		game.time.events.loop(40000, this.checkCitizenStatus, this);
 		setTimeout(()=>{
 			this.beginRound();
 		}, 2000);
@@ -76,15 +78,33 @@ class AI_manager extends Phaser.Sprite {
 		);
 	}
 	
+	checkCitizenStatus(){
+		if(this.game.power_bar.status < .224 || this.game.housing_bar.status < .224){
+			//pick an random citizen and kill him
+			let pick_citizen = this.getRandomInt(0, this.aliveCitizens.length);
+			this.aliveCitizens[pick_citizen].kill();
+			this.citizenDeathSound.play();
+			this.aliveCitizens.splice(pick_citizen, 1);
+		}
+		else if(this.game.power_bar.status >= .400 && this.game.housing_bar.status >= .400){
+			//add a new citizen or increase the cost of a citizen, but add skill to him
+			
+			console.log("I'm in here");
+			this.newMemberSound.play();
+			if(this.aliveCitizens.length < 7){
+				this.spawnCitizen(1);
+			}
+			else{
+				let pick_citizen = this.getRandomInt(0, this.aliveCitizens.length);
+				this.aliveCitizens[pick_citizen].cost += this.getRandomInt(1,6);
+				this.aliveCitizens[pick_citizen].skill += this.getRandomInt(1,9);
+			}
+			
+		}
+	}
+	
 	beginRound(){
-		this.game.AI_MANAGER.aliveCitizens.forEach(
-				c => {
-					c.weapon.fireLimit = 10;
-					c.weapon.fireRate = 1;
-					c.weapon.bulletLifespan = 2500;
-					c.weapon.bulletSpeed = 150;
-				}
-			);
+		
 		this.round++;
 		this.totalEnemyCount = this.round*2;
 		
@@ -142,7 +162,7 @@ class AI_manager extends Phaser.Sprite {
 			randFloor = 0;
 		return randFloor;
 	}
-	
+	//update that manages everything related to ai and it's affect on the world
 	update(){
 		this.aliveEnemies.forEach(e => {
 			if(e != null){
@@ -181,6 +201,33 @@ class AI_manager extends Phaser.Sprite {
 			this.game.gameOverScreen.children[0].input.enabled = true;
 			this.game.gameOverScreen.x = this.game.camera.x;
 			this.game.gameOverScreen.y = this.game.camera.y;
+		}
+		
+		this.calculateBars();
+	}
+	
+	calculateBars(){
+		let energy_room_gen = 0;
+		let housing_room_gen = 0;
+		let citizen_cost = 0;
+		
+		if(this.game.all_rooms.length > 0){
+			this.game.all_rooms.forEach(r => {
+				if(r.room_key == 'energy_room'){
+					energy_room_gen += r.stats;
+				}
+				else if(r.room_key == 'housing_room'){
+					housing_room_gen += r.stats;
+				}
+			});
+			this.aliveCitizens.forEach(c => {
+				citizen_cost += c.cost;
+			});
+			let housing_total_cost = housing_room_gen - citizen_cost;
+			let energy_total_cost = energy_room_gen - citizen_cost;
+			
+			this.game.power_bar.increaseBar(energy_total_cost/15000); 
+			this.game.housing_bar.increaseBar(housing_total_cost/15000);
 		}
 	}
 	

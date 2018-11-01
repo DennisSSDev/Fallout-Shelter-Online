@@ -117,6 +117,7 @@ class Level extends Phaser.State {
 		this.add.existing(_AI_manager);
 		
 		this.game.AI_MANAGER = _AI_manager // global access
+		this.game.all_rooms = [];
 		
 		
 		var _group = this.add.group();

@@ -28,9 +28,8 @@ class Room_Creator extends Phaser.Sprite {
 		this.stat = 0;//will be populated by based on creations for increasing the stats of the game
 		this.onClickSound = this.game.add.audio("build");
 		this.onClickSound_upgrade = this.game.add.audio("upgrade");
-		if(this.game.latest_room == undefined){
+		if(this.game.latest_room === undefined){
 			this.game.latest_room = null;
-			this.game.all_rooms = [];
 		}
 	}
 	
@@ -57,6 +56,10 @@ class Room_Creator extends Phaser.Sprite {
 			this.room_type = new Creator_HoverWindow(this.game, this.obj_creator.x, this.obj_creator.y);
 			this.game.add.existing(this.room_type);
 			this.game.resource_bar.increaseBar(.05);
+			if(this.obj_creator != null || this.obj_creator != undefined){
+				let res_index = this.game.all_rooms.indexOf(this.obj_creator);
+				this.game.all_rooms.splice(res_index, 1);
+			}
 			this.selfDestruct();
 		}
 		else if(this.assigned_key == "home"){
@@ -95,11 +98,7 @@ class Room_Creator extends Phaser.Sprite {
 			this.obj_creator.option_1.destroy();
 		else
 			this.obj_creator.option_2.destroy();
-		
-		if(this.obj_creator != null || this.obj_creator != undefined){
-			let res_index = this.game.all_rooms.indexOf(this.obj_creator);
-			this.game.all_rooms.splice(res_index, 1);
-		}
+	
 		this.obj_creator.destroy();
 		this.destroy();
 	}

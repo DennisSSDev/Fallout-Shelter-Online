@@ -41,6 +41,8 @@ class citizen extends Phaser.Sprite {
 		this.personalEmote = null;
 		this.spawnedEmote = false;
 		
+		this.cost = 1;//all of the citizens on spawn should start with a cost of 1
+		
 		this.AI_STATES = Object.freeze({
 			"IDLE": 0,
 			"EMOTE": 1,

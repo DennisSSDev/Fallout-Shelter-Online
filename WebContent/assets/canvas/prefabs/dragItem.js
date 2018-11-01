@@ -36,6 +36,7 @@ class dragItem extends Phaser.Sprite {
 			this.scale.setTo(.4,.4);
 			this.y += 10;
 			this.item_type = aKey;
+			this.timer = null;
 		}
 		this.inputEnabled = true;
 		this.input.enableDrag();
@@ -83,11 +84,24 @@ class dragItem extends Phaser.Sprite {
 						c.weapon.bulletSpeed = 400;
 					}
 				);
+			this.timer = this.game.time.events.loop(5000, this.resetFireRate, this);
 			this.kill();
 			break;
 		default: console.log("no valid effects");
 			break;
 		}
+	}
+	
+	resetFireRate(){
+		this.game.AI_MANAGER.aliveCitizens.forEach(
+				c => {
+					c.weapon.fireLimit = 25;
+					c.weapon.fireRate = 25;
+					c.weapon.bulletLifespan = 2500;
+					c.weapon.bulletSpeed = 150;
+				}
+			);
+		this.game.time.events.remove(this.timer);
 	}
 	
 	bombLanding(){
