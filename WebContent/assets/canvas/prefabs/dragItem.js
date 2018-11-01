@@ -22,11 +22,11 @@ class dragItem extends Phaser.Sprite {
 		this.item_type = 'bomb';
 		this.input.enableDrag();
 		this.events.onDragStop.add(this.activateEffect, this);
+		this.timer = this.game.time.events.loop(Phaser.Timer.QUARTER, this.bombLanding, this);
+		this.explosionSound = this.game.add.audio("Explosion");
 	}
 	
-	
 	activateEffect(){
-		console.log("in effect activator");
 		switch(this.item_type){
 		case 'bomb':
 			this.inputEnabled = false;
@@ -38,9 +38,13 @@ class dragItem extends Phaser.Sprite {
 		}
 	}
 	
-	/* sprite-methods-begin */
-	// -- user code here --
-	/* sprite-methods-end */
+	bombLanding(){
+		if(this.y > 596){
+			//Spawn particle
+			this.game.AI_MANAGER.destroyAll(this.x);
+			this.explosionSound.play();
+			this.kill();
+			this.game.time.events.remove(this.timer);
+		}
+	}	
 }
-/* --- end generated code --- */
-// -- user code here --

@@ -20,6 +20,7 @@ class AI_manager extends Phaser.Sprite {
 		this.renderable = false;
 		this.validFloors = {'0': 392, '1': 596};//secretly there should only be 2 valid floors for now
 		this.round = 0;
+		this.requestKillAll = false;
 		this.citizenTypes = Object.seal({
 			'0': 'adventurer_tilesheet',
 			'1': 'female_tilesheet',
@@ -135,13 +136,6 @@ class AI_manager extends Phaser.Sprite {
 	}
 	
 	update(){
-		this.allBullets = [];
-		this.weapons.forEach(c => {
-			this.allBullets = this.allBullets.concat(c.bullets);
-		});
-		this.game.physics.arcade.collide(this.aliveCitizens, this.aliveEnemies, this.collisionCallback, null, this);
-		this.game.physics.arcade.collide(this.allBullets, this.aliveEnemies, this.bulletCollisionCallback, null, this);
-		
 		this.aliveEnemies.forEach(e => {
 			if(e != null){
 				if(e.x > 1200){
@@ -151,10 +145,9 @@ class AI_manager extends Phaser.Sprite {
 					e = null;
 				}
 			}
-		});
-		
-		
+		});	
 		if(this.totalEnemyCount <= 0){
+			this.requestKillAll = false;
 			this.game.alertMessage.alpha = 0;
 			this.aliveCitizens.forEach(c => {
 				c.CURRENT_STATE = c.AI_STATES.IDLE;
@@ -164,6 +157,14 @@ class AI_manager extends Phaser.Sprite {
 			this.battleMusic.fadeOut(2500);
 			this.beginRound();
 		}
+		else{
+			this.allBullets = [];
+			this.weapons.forEach(c => {
+				this.allBullets = this.allBullets.concat(c.bullets);
+			});
+			this.game.physics.arcade.collide(this.aliveCitizens, this.aliveEnemies, this.collisionCallback, null, this);
+			this.game.physics.arcade.collide(this.allBullets, this.aliveEnemies, this.bulletCollisionCallback, null, this);
+		}
 		if(this.aliveCitizens.length <= 0){
 			this.game.gameOverScreen.alpha = 1;
 			this.game.world.bringToTop(this.game.gameOverScreen);
@@ -171,6 +172,20 @@ class AI_manager extends Phaser.Sprite {
 			this.game.gameOverScreen.x = this.game.camera.x;
 			this.game.gameOverScreen.y = this.game.camera.y;
 		}
+	}
+	
+	destroyAll(location){
+		this.aliveEnemies.forEach( e => {
+				if(Math.abs(e.x - location) < 55){
+					if(e != null){	
+						e.x = -100;
+						e.kill();
+						this.totalEnemyCount--;
+						e = null;
+					}
+				}
+			}
+		);
 	}
 	
 	collisionCallback(c,e){//c for citizen, e for enemy
@@ -193,6 +208,8 @@ class AI_manager extends Phaser.Sprite {
 	clamp(num, min, max) {
 		  return num <= min ? min : num >= max ? max : num;
 	}
+	
+	
 }
 /* --- end generated code --- */
 // -- user code here --

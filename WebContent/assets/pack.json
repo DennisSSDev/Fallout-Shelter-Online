@@ -437,10 +437,16 @@
       "key": "upgrade",
       "urls": ["assets/audio/upgrade.ogg"],
       "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "Explosion",
+      "urls": ["assets/atlas/Explosion.ogg"],
+      "autoDecode": true
     }
   ],
   "meta": {
-    "generated": "1541029054974",
+    "generated": "1541033535088",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
