@@ -82,6 +82,7 @@ class Level extends Phaser.State {
 		
 		var _Total_Count = new PlayerCount(this.game, 895.0, 13.0);
 		this.add.existing(_Total_Count);
+		this.game.totalPlayerCount = _Total_Count;
 		
 		var _glassPanel = new Creator_HoverWindow(this.game, 414.0, 284.0);
 		this.add.existing(_glassPanel);

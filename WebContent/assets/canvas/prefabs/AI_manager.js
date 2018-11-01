@@ -101,6 +101,8 @@ class AI_manager extends Phaser.Sprite {
 			}
 			
 		}
+		
+		this.game.totalPlayerCount.updateCount(this.aliveCitizens.length);
 	}
 	
 	beginRound(){
@@ -252,6 +254,7 @@ class AI_manager extends Phaser.Sprite {
 		this.citizenDeathSound.play();
 		this.aliveCitizens.splice(index, 1);
 		e.body.velocity.x = 0;
+		this.game.totalPlayerCount.updateCount(this.aliveCitizens.length);
 	}
 	bulletCollisionCallback(e, b){// b for bullet, e for enemy
 		b.kill();
