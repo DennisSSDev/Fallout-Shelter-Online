@@ -43,6 +43,9 @@ class dragItem extends Phaser.Sprite {
 		this.events.onDragStart.add(this.bringToFront, this);
 		this.events.onDragStop.add(this.activateEffect, this);
 		if(aKey == undefined){
+			this.emitter = game.add.emitter(0, 0, 100);
+			this.emitter.makeParticles('explosion01');
+			this.emitter.gravity = 100;
 			this.item_type = 'bomb';
 			this.timer = this.game.time.events.loop(Phaser.Timer.QUARTER, this.bombLanding, this);
 			this.explosionSound = this.game.add.audio("Explosion");
@@ -107,6 +110,9 @@ class dragItem extends Phaser.Sprite {
 	bombLanding(){
 		if(this.y > 596){
 			//Spawn particle
+			this.emitter.x = this.x;
+			this.emitter.y = this.y;
+			this.emitter.start(true, 2000, null, 10);
 			this.game.AI_MANAGER.destroyAll(this.x);
 			this.explosionSound.play();
 			this.kill();

@@ -31,6 +31,11 @@ class Room_Creator extends Phaser.Sprite {
 		if(this.game.latest_room === undefined){
 			this.game.latest_room = null;
 		}
+		this.emitter = game.add.emitter(0, 0, 120);
+		this.emitter.makeParticles('blackSmoke00');
+		this.emitter.gravity = 400;
+		this.emitter.minParticleScale = .2;
+	    this.emitter.maxParticleScale = .4;
 	}
 	
 	/* sprite-methods-begin */
@@ -49,6 +54,10 @@ class Room_Creator extends Phaser.Sprite {
 				this.game.resource_bar.depleteBar(.2);
 				this.onClickSound_upgrade.play();
 				this.obj_creator.upgrade();
+				this.emitter.x = this.obj_creator.x + 100;
+				this.emitter.y = this.obj_creator.y + 50;
+				this.emitter.start(true, 3000, null, 10);
+				this.emitter.particleBringToTop = true; 
 			}
 		}
 		else if(this.assigned_key == "cross"){
@@ -72,6 +81,11 @@ class Room_Creator extends Phaser.Sprite {
 				this.game.latest_room = this.room_type;
 				this.game.all_rooms.push(this.room_type);
 				this.game.resource_bar.depleteBar(.25);
+				this.emitter.x = this.obj_creator.x + 100;
+				this.emitter.y = this.obj_creator.y + 50;
+				this.emitter.particleBringToTop = true; 
+				this.emitter.start(true, 3000, null, 10);
+				this.game.world.bringToTop(this.emitter);
 				this.selfDestruct();
 			}
 		}
@@ -85,6 +99,12 @@ class Room_Creator extends Phaser.Sprite {
 				this.game.all_rooms.push(this.room_type);
 				this.bringCharToFront();
 				this.game.resource_bar.depleteBar(.27);// cost is a bit higher than housing
+				this.emitter.x = this.obj_creator.x + 100;
+				this.emitter.y = this.obj_creator.y + 50;
+				this.emitter.particleBringToTop = true; 
+				this.emitter.start(true, 3000, null, 10);
+				//this.emitter.particleBringToTop = true; 
+				this.game.world.bringToTop(this.emitter);
 				this.selfDestruct();
 			}
 		}

@@ -50,7 +50,11 @@ class enemy extends Phaser.Sprite {
 		this.events.onInputUp.add(this.hit, this);
 		this.hitSound = this.game.add.audio("hit_sound");
 		this.loot = new Resource(this.game, this.x, this.y, );
-		
+		this.emitter = game.add.emitter(0, 0, 100);
+		this.emitter.makeParticles('explosion01');
+		this.emitter.gravity = 100;
+		this.emitter.minParticleScale = .01;
+	    this.emitter.maxParticleScale = .05;
 	}
 	
 	updateState(){
@@ -58,6 +62,11 @@ class enemy extends Phaser.Sprite {
 	}
 	hit(){
 		//instantiate a particle effect
+		this.emitter.x = this.x + 45;
+		this.emitter.y = this.y + 35;
+		this.emitter.start(true, 1000, null, 10);
+		this.emitter.particleBringToTop = true; 
+		this.game.world.bringToTop(this.emitter);
 		this.hitSound.play();
 		this.health--;
 	}

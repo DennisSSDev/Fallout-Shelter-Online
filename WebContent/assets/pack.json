@@ -467,10 +467,22 @@
       "key": "increase_fire_rate",
       "url": "assets/audio/increase_fire_rate.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "blackSmoke00",
+      "url": "assets/images/blackSmoke00.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "explosion01",
+      "url": "assets/images/explosion01.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1541035476546",
+    "generated": "1541099785775",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
