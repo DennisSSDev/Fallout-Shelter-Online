@@ -413,10 +413,34 @@
       "key": "Under_Attack",
       "urls": ["assets/audio/Under_Attack.mp3"],
       "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "pickup",
+      "urls": ["assets/audio/pickup.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "groan",
+      "urls": ["assets/audio/groan.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "hit_sound",
+      "urls": ["assets/audio/hit_sound.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "upgrade",
+      "urls": ["assets/audio/upgrade.ogg"],
+      "autoDecode": true
     }
   ],
   "meta": {
-    "generated": "1541024708574",
+    "generated": "1541029054974",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

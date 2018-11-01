@@ -27,10 +27,12 @@ class Creator_HoverWindow extends Phaser.Sprite {
 		this.events.onInputOver.add(this.onHover, this);
 		this.events.onInputOut.add(this.onLeftHover, this);
 		this.events.onInputUp.add(this.dispenceOptions, this);
-		
+		this.onHoverSound = this.game.add.audio("Hover_Build");
+		this.onClick = this.game.add.audio("Hover_Click");
 	}
 	
 	onHover(){
+		this.onHoverSound.play();
 		this.addTint();
 	}
 	onLeftHover(){
@@ -38,6 +40,7 @@ class Creator_HoverWindow extends Phaser.Sprite {
 	}
 	
 	dispenceOptions(){
+		this.onClick.play();
 		if(this.option_1 == null)
 			this.createOptions();
 		else

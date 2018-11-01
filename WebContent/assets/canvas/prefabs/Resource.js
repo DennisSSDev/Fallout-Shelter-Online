@@ -20,8 +20,10 @@ class Resource extends Phaser.Sprite {
 		this.scale.setTo(0.6790204717571736, 0.6790204717571736);
 		this.inputEnabled = true;
 		this.events.onInputUp.add(this.pickup, this);
+		this.onClickSound = this.game.add.audio("pickup");
 	}
 	pickup(){
+		this.onClickSound.play();
 		this.game.resource_bar.increaseBar(this.getRandomFloat(.02, .06));
 		this.kill();
 	}

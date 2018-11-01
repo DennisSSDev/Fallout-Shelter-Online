@@ -15,11 +15,26 @@ class enemy extends Phaser.Sprite {
 	 * @param {any} aKey This is the image or texture used by the Sprite during rendering. It can be a string which is a reference to the Cache entry, or an instance of a RenderTexture or PIXI.Texture.
 	 * @param {any} aFrame If this Sprite is using part of a sprite sheet or texture atlas you can specify the exact frame to use by giving a string or numeric index.
 	 */
-	constructor(aGame, aX, aY, aKey, aFrame, timeToTakeToMove, health) {
+	constructor(aGame, aX, aY, aKey, aFrame, timeToTakeToMove, health, round) {
 		//if the enemy iis of certain health value, change the scale
 		
 		super(aGame, aX, aY, aKey || 'alienBlue', aFrame  == undefined || aFrame == null? 0 : aFrame);
-		this.scale.setTo(0.9, 0.9);
+		this.round = round;
+		if(this.round != undefined){
+			if(this.round > 3){
+				let rand_store = Math.random();
+				if(rand_store < .6){
+					this.scale.setTo(0.9+rand_store, 0.9+rand_store);
+					if(this.round > 5){
+						let rand_double = Math.random()*2;
+						this.scale.setTo(0.9+rand_store + rand_double, 0.9+rand_store + rand_double);
+					}
+				}
+				else{
+					this.scale.setTo(0.9, 0.9);
+				}
+			}
+		}
 		this.moveTime = timeToTakeToMove;
 		this.health = health;
 		this.game.physics.arcade.enable(this);
@@ -33,7 +48,9 @@ class enemy extends Phaser.Sprite {
 		this.body.stopVelocityOnCollide = false;
 		this.inputEnabled = true;
 		this.events.onInputUp.add(this.hit, this);
+		this.hitSound = this.game.add.audio("hit_sound");
 		this.loot = new Resource(this.game, this.x, this.y, );
+		
 	}
 	
 	updateState(){
@@ -41,6 +58,7 @@ class enemy extends Phaser.Sprite {
 	}
 	hit(){
 		//instantiate a particle effect
+		this.hitSound.play();
 		this.health--;
 	}
 	

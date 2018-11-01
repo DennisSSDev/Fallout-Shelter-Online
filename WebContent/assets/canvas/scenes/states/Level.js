@@ -112,7 +112,7 @@ class Level extends Phaser.State {
 		
 		var _group = this.add.group();
 		_group.position.setTo(-45.0, -54.0);
-		var _red_button = this.add.button(333.0, 406.0, 'red_button00', function(){this.game.state.start("Menu")}, this, null, null, null, null, _group);
+		var _red_button = this.add.button(333.0, 406.0, 'red_button00', function(){this.game.state.start("Menu"); this.game.sound.stopAll();}, this, null, null, null, null, _group);
 		_red_button.scale.setTo(2.4641176784208874, 2.9396432652201105);
 		this.add.text(429.0, 431.0, 'Game Over', {"font":"bold 50px Arial"}, _group);
 		this.add.text(485.0, 478.0, 'Return to menu\n', {"font":"bold 20px Arial"}, _group);

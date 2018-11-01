@@ -147,10 +147,11 @@ class citizen extends Phaser.Sprite {
 		panic += this.panicScale;
 		panic -= this.resistance;
 		if(panic >= 15){
-			this.animations.play('panic');
+			this.animations.play('panic');//need panic anmation
 			this.executing_command = true;
 		}
 		else{
+			this.game.world.bringToTop(this.weapon.bullets);
 			let angle = this.getRandomInt(145 + this.skill, 250 - this.skill);
 			this.weapon.fireAngle = angle;
 			this.weapon.fireFrom.x = this.x;

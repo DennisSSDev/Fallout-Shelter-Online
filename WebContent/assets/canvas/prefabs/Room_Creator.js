@@ -26,6 +26,8 @@ class Room_Creator extends Phaser.Sprite {
 		this.events.onInputUp.add(this.construct, this);
 		this.room_type = null;
 		this.stat = 0;//will be populated by based on creations for increasing the stats of the game
+		this.onClickSound = this.game.add.audio("build");
+		this.onClickSound_upgrade = this.game.add.audio("upgrade");
 	}
 	
 	/* sprite-methods-begin */
@@ -40,8 +42,10 @@ class Room_Creator extends Phaser.Sprite {
 	construct(){
 		if(this.assigned_key == "shoppingBasket"){
 			//upgrade the parent;
+			this.onClickSound_upgrade.play();
 		}
 		else if(this.assigned_key == "cross"){
+			this.onClickSound_upgrade.play();
 			this.room_type = new Creator_HoverWindow(this.game, this.obj_creator.x, this.obj_creator.y);
 			this.game.add.existing(this.room_type);
 			this.game.resource_bar.increaseBar(.05);
@@ -50,6 +54,7 @@ class Room_Creator extends Phaser.Sprite {
 		else if(this.assigned_key == "home"){
 			//build new home and destroy the parent;
 			if(this.allowConstruct(this.game.resource_bar, .05)){
+				this.onClickSound.play();
 				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "housing_room");
 				this.game.add.existing(this.room_type);
 				this.bringCharToFront();
@@ -60,6 +65,7 @@ class Room_Creator extends Phaser.Sprite {
 		else if(this.assigned_key == "power"){
 			//build new home and destroy the parent
 			if(this.allowConstruct(this.game.resource_bar, .05)){
+				this.onClickSound.play();
 				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "energy_room");
 				this.game.add.existing(this.room_type);
 				this.bringCharToFront();
