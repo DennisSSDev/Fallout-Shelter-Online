@@ -77,6 +77,14 @@ class AI_manager extends Phaser.Sprite {
 	}
 	
 	beginRound(){
+		this.game.AI_MANAGER.aliveCitizens.forEach(
+				c => {
+					c.weapon.fireLimit = 10;
+					c.weapon.fireRate = 1;
+					c.weapon.bulletLifespan = 2500;
+					c.weapon.bulletSpeed = 150;
+				}
+			);
 		this.round++;
 		this.totalEnemyCount = this.round*2;
 		
@@ -164,6 +172,8 @@ class AI_manager extends Phaser.Sprite {
 			});
 			this.game.physics.arcade.collide(this.aliveCitizens, this.aliveEnemies, this.collisionCallback, null, this);
 			this.game.physics.arcade.collide(this.allBullets, this.aliveEnemies, this.bulletCollisionCallback, null, this);
+			if(this.game.globalBlocker != undefined)
+				this.game.physics.arcade.collide(this.aliveEnemies, this.game.globalBlocker);
 		}
 		if(this.aliveCitizens.length <= 0){
 			this.game.gameOverScreen.alpha = 1;

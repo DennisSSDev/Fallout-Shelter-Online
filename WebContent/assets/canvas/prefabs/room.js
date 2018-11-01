@@ -21,15 +21,22 @@ class room extends Phaser.Sprite {
 		
 		this.option_1 = null;
 		this.option_2 = null;
-		
+		this.stats = 5;
 		this.inputEnabled = true;
 		this.events.onInputOver.add(this.onHover, this);
 		this.events.onInputOut.add(this.onLeftHover, this);
 		this.events.onInputUp.add(this.dispenceOptions, this);
-		
+		this.onHoverSound = this.game.add.audio("Hover_Build");
+		this.onClick = this.game.add.audio("Hover_Click");
+	}
+	upgrade(){
+		console.log("Upgrading room");
+		this.stats += 5;
 	}
 	
+	
 	onHover(){
+		this.onHoverSound.play();
 		this.addTint();
 	}
 	onLeftHover(){
@@ -37,6 +44,7 @@ class room extends Phaser.Sprite {
 	}
 	
 	dispenceOptions(){
+		this.onClick.play();
 		if(this.option_1 == null)
 			this.createOptions();
 		else
@@ -51,7 +59,6 @@ class room extends Phaser.Sprite {
 	}
 	
 	createOptions(){
-		console.log("enetered");
 		this.option_1 = new Room_Creator(this.game,this.x+25, this.y+50,'shoppingBasket', null, this);
 		this.option_2 = new Room_Creator(this.game, this.x+125, this.y+50, 'cross', null, this);
 		this.game.add.existing(this.option_1);
@@ -59,7 +66,6 @@ class room extends Phaser.Sprite {
 	}
 	
 	removeOptions(){
-		console.log("removed options");
 		this.option_1.destroy();
 		this.option_2.destroy();
 		this.option_1 = null;

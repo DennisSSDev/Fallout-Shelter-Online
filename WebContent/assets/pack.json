@@ -443,10 +443,22 @@
       "key": "Explosion",
       "urls": ["assets/atlas/Explosion.ogg"],
       "autoDecode": true
+    },
+    {
+      "type": "image",
+      "key": "block",
+      "url": "assets/audio/block.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "increase_fire_rate",
+      "url": "assets/audio/increase_fire_rate.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1541033535088",
+    "generated": "1541036464441",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

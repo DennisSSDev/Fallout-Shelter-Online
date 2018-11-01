@@ -17,13 +17,39 @@ class dragItem extends Phaser.Sprite {
 	 */
 	constructor(aGame, aX, aY, aKey, aFrame) {
 		super(aGame, aX, aY, aKey || 'bomb', aFrame  == undefined || aFrame == null? null : aFrame);
-		this.scale.setTo(0.27857276114138735, 0.27857276114138735);
+		if(aKey == undefined)
+			this.scale.setTo(0.27857276114138735, 0.27857276114138735);
+		else if(aKey == 'shoppingBasket'){
+			this.onClickSound_upgrade = this.game.add.audio("upgrade");
+			this.scale.setTo(.8,.8);
+			this.x -= 20;
+			this.item_type = aKey;
+		}
+		else if(aKey == 'block'){
+			this.scale.setTo(.25,.25);
+			this.x += 12;
+			this.y += 15;
+			this.item_type = aKey;
+			this.timer = null;
+		}
+		else if(aKey == 'increase_fire_rate'){
+			this.scale.setTo(.4,.4);
+			this.y += 10;
+			this.item_type = aKey;
+		}
 		this.inputEnabled = true;
-		this.item_type = 'bomb';
 		this.input.enableDrag();
+		this.events.onDragStart.add(this.bringToFront, this);
 		this.events.onDragStop.add(this.activateEffect, this);
-		this.timer = this.game.time.events.loop(Phaser.Timer.QUARTER, this.bombLanding, this);
-		this.explosionSound = this.game.add.audio("Explosion");
+		if(aKey == undefined){
+			this.item_type = 'bomb';
+			this.timer = this.game.time.events.loop(Phaser.Timer.QUARTER, this.bombLanding, this);
+			this.explosionSound = this.game.add.audio("Explosion");
+		}
+	}
+	
+	bringToFront(){
+		this.game.world.bringToTop(this);
 	}
 	
 	activateEffect(){
@@ -32,6 +58,32 @@ class dragItem extends Phaser.Sprite {
 			this.inputEnabled = false;
 			this.game.physics.arcade.enable(this);
 			this.body.gravity.y = 700;
+			break;
+		case 'shoppingBasket':
+			if(this.game.latest_room != undefined){
+				this.onClickSound_upgrade.play();
+				this.inputEnabled = false;
+				this.game.latest_room.upgrade();
+				this.kill();
+			}
+			break;
+		case 'block':
+			this.inputEnabled = false;
+			this.game.physics.arcade.enable(this);
+			this.game.globalBlocker = this;
+			this.body.immovable = true;
+			this.timer = this.game.time.events.loop(6000, this.removeBlock, this);
+			break;
+		case 'increase_fire_rate':
+			this.game.AI_MANAGER.aliveCitizens.forEach(
+					c => {
+						c.weapon.fireLimit = 50;
+						c.weapon.fireRate = 50;
+						c.weapon.bulletLifespan = 1000;
+						c.weapon.bulletSpeed = 400;
+					}
+				);
+			this.kill();
 			break;
 		default: console.log("no valid effects");
 			break;
@@ -46,5 +98,10 @@ class dragItem extends Phaser.Sprite {
 			this.kill();
 			this.game.time.events.remove(this.timer);
 		}
-	}	
+	}
+	removeBlock(){
+		this.game.time.events.remove(this.timer);
+		this.game.globalBlocker = null;
+		this.kill();
+	}
 }

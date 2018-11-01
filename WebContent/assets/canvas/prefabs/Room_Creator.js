@@ -28,6 +28,10 @@ class Room_Creator extends Phaser.Sprite {
 		this.stat = 0;//will be populated by based on creations for increasing the stats of the game
 		this.onClickSound = this.game.add.audio("build");
 		this.onClickSound_upgrade = this.game.add.audio("upgrade");
+		if(this.game.latest_room == undefined){
+			this.game.latest_room = null;
+			this.game.all_rooms = [];
+		}
 	}
 	
 	/* sprite-methods-begin */
@@ -42,7 +46,11 @@ class Room_Creator extends Phaser.Sprite {
 	construct(){
 		if(this.assigned_key == "shoppingBasket"){
 			//upgrade the parent;
-			this.onClickSound_upgrade.play();
+			if(this.allowConstruct(this.game.resource_bar, .05)){
+				this.game.resource_bar.depleteBar(.2);
+				this.onClickSound_upgrade.play();
+				this.obj_creator.upgrade();
+			}
 		}
 		else if(this.assigned_key == "cross"){
 			this.onClickSound_upgrade.play();
@@ -58,6 +66,8 @@ class Room_Creator extends Phaser.Sprite {
 				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "housing_room");
 				this.game.add.existing(this.room_type);
 				this.bringCharToFront();
+				this.game.latest_room = this.room_type;
+				this.game.all_rooms.push(this.room_type);
 				this.game.resource_bar.depleteBar(.25);
 				this.selfDestruct();
 			}
@@ -68,6 +78,8 @@ class Room_Creator extends Phaser.Sprite {
 				this.onClickSound.play();
 				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "energy_room");
 				this.game.add.existing(this.room_type);
+				this.game.latest_room = this.room_type;
+				this.game.all_rooms.push(this.room_type);
 				this.bringCharToFront();
 				this.game.resource_bar.depleteBar(.27);// cost is a bit higher than housing
 				this.selfDestruct();
@@ -84,6 +96,10 @@ class Room_Creator extends Phaser.Sprite {
 		else
 			this.obj_creator.option_2.destroy();
 		
+		if(this.obj_creator != null || this.obj_creator != undefined){
+			let res_index = this.game.all_rooms.indexOf(this.obj_creator);
+			this.game.all_rooms.splice(res_index, 1);
+		}
 		this.obj_creator.destroy();
 		this.destroy();
 	}

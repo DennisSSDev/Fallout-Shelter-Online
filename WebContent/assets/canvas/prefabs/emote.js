@@ -26,7 +26,6 @@ class emote extends Phaser.Sprite {
 	
 	destroySelf(){
 		this.call_obj.personalEmote = null;
-		console.log("I happened");
 		this.destroy();
 	}
 	/* sprite-methods-begin */

@@ -104,6 +104,15 @@ class Level extends Phaser.State {
 		var _dragBomb = new dragItem(this.game, 170, 105);
 		this.add.existing(_dragBomb);
 		
+		var _dragFreeUpgrade = new dragItem(this.game, 356, 105, 'shoppingBasket');
+		this.add.existing(_dragFreeUpgrade);
+		
+		var _dragRateOfFire = new dragItem(this.game, 542, 105, 'block');
+		this.add.existing(_dragRateOfFire);
+		
+		var _dragBarrier = new dragItem(this.game, 728, 105, 'increase_fire_rate');
+		this.add.existing(_dragBarrier);
+		
 		var _AI_manager = new AI_manager(this.game, 0, 0, null, null, 3);
 		this.add.existing(_AI_manager);
 		
