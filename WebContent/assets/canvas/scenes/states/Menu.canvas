@@ -112,7 +112,8 @@
                   "x": 309,
                   "y": 177,
                   "alpha": 0,
-                  "text": "Instructions:\r\n\r\n\u2022 Don't let your citizens die\r\n\r\nGood Luck Out there!"
+                  "text": "You are in charge of leading a small group of \r\nsurvivors in an underground bunker. Your orders are as follows:\r\n\r\n\u2022 Construct new facilities to sustain your citizens\r\n\u2022 Use the tools at your disposal to help protect \r\n  your citizens against mutants\r\n\u2022 Improve the bunker's facilities using building \r\n  materials you collect from mutants\r\n\u2022 Do not allow all of your citizens to perish from\r\n  either lack of resources or mutant attacks\r\n\r\nFurther notes:\r\n\r\n\u2022 Your starting materials are limited - use them wisely!\r\n\u2022 Citizens will use up resources over time, the\r\n  facilities you build will help replenish them\r\n\r\nControls:\r\n\r\n\u2022 Mouse - interact with the bunker and use tools\r\n\u2022 Arrow Keys - pan up/down/left/right\r\n\u2022 A - zoom camera in, S - zoom camera out\r\n\r\nGood luck down there!",
+                  "style.fontSize": 14
                 }
               }
             ]
