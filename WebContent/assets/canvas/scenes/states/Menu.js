@@ -22,22 +22,23 @@ class Menu extends Phaser.State {
 		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 		this.scale.pageAlignHorizontally = true;
 		this.scale.pageAlignVertically = true;
-		
 	}
 	
 	preload () {
 		
 		this.load.pack('level', 'assets/pack.json');
-		
+		//this.backgroundMusic = this.game.add.audio("Idle1");
 	}
 	
 	create() {
+		let _backgroundMusic = this.game.add.audio("Idle1");
+		
 		var _s_colored_desert = this.add.sprite(-4.0, -4.0, 'colored_desert');
 		_s_colored_desert.scale.setTo(1.0104976500063336, 0.7569919450115183);
 		
 		var _startButton = this.add.group();
 		
-		this.add.button(450.0, 550.0, 'red_button01', function(){this.game.state.start("Level")}, this, null, null, null, null, _startButton);
+		this.add.button(450.0, 550.0, 'red_button01', function(){this.game.sound.stopAll();this.game.state.start("Level");}, this, null, null, null, null, _startButton);
 		
 		this.add.text(480.0, 560.0, 'Click to Start', {"font":"bold 20px Arial"}, _startButton);
 		
@@ -57,7 +58,9 @@ class Menu extends Phaser.State {
 		
 		_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions_panel);
 		
-		
+		_backgroundMusic.loop = true;
+		_backgroundMusic.play();
+		//_backgroundMusic.fadeIn(1000, true, '');
 	}
 	
 	/* state-methods-begin */
@@ -65,6 +68,9 @@ class Menu extends Phaser.State {
 	//_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions);
 	//_s_instructions_panel.alpha = 0.0;
 	//_t_instructions_panel.alpha = 0.0;
+	//this.backgroundMusic.loop = true;
+	//this.backgroundMusic.play();
+	//this.backgroundMusic.fadeIn(1000);
 	/* state-methods-end */
 	
 }

@@ -68,7 +68,7 @@
                   "editorName": "b_start",
                   "x": 450,
                   "y": 550,
-                  "callback": "function(){this.game.state.start(\"Level\")}"
+                  "callback": "function(){this.game.sound.stopAll();this.game.state.start(\"Level\");}"
                 }
               },
               {
