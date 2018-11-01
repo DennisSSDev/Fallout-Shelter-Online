@@ -37,7 +37,7 @@ class Menu extends Phaser.State {
 		
 		var _startButton = this.add.group();
 		
-		this.add.button(450.0, 550.0, 'red_button01', function(){this.game.state.start("Level")}, this, null, null, null, null, _startButton);
+		this.add.button(450.0, 550.0, 'red_button01', function(){this.game.sound.stopAll();this.game.state.start("Level");}, this, null, null, null, null, _startButton);
 		
 		this.add.text(480.0, 560.0, 'Click to Start', {"font":"bold 20px Arial"}, _startButton);
 		
@@ -46,8 +46,8 @@ class Menu extends Phaser.State {
 		var _s_instructions_panel = this.add.sprite(250.0, 125.0, 'red_panel', null, _instructionsPanel);
 		_s_instructions_panel.scale.setTo(6.0, 6.0);
 		_s_instructions_panel.alpha = 0.0;
-
-		var _t_instructions_panel = this.add.text(309.0, 177.0, 'Instructions:\n\n• Don\'t let your citizens die\n\nGood Luck Out there!', {"font":"bold 20px Arial"}, _instructionsPanel);
+		
+		var _t_instructions_panel = this.add.text(309.0, 177.0, 'You are in charge of leading a small group of \nsurvivors in an underground bunker. Your orders are as follows:\n\n• Construct new facilities to sustain your citizens\n• Use the tools at your disposal to help protect \n  your citizens against mutants\n• Improve the bunker\'s facilities using building \n  materials you collect from mutants\n• Do not allow all of your citizens to perish from\n  either lack of resources or mutant attacks\n\nFurther notes:\n\n• Your starting materials are limited - use them wisely!\n• Citizens will use up resources over time, the\n  facilities you build will help replenish them\n\nControls:\n\n• Mouse - interact with the bunker and use tools\n• Arrow Keys - pan up/down/left/right\n• A - zoom camera in, S - zoom camera out\n\nGood luck down there!', {"font":"bold 14px Arial"}, _instructionsPanel);
 		_t_instructions_panel.alpha = 0.0;
 		
 		var _b_instructions = new instructionButton(this.game, 815.0, 700.0);
@@ -57,14 +57,21 @@ class Menu extends Phaser.State {
 		
 		_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions_panel);
 		
+		let _backgroundMusic = this.game.add.audio("Idle1");
+		_backgroundMusic.loop = true;
+		_backgroundMusic.play();
+		
 		
 	}
 	
 	/* state-methods-begin */
 	// -- user code here --
-	//_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions);
+	//_b_instructions.setInstructionPanel(_s_instructions_panel, _t_instructions_panel);
 	//_s_instructions_panel.alpha = 0.0;
 	//_t_instructions_panel.alpha = 0.0;
+	//let _backgroundMusic = this.game.add.audio("Idle1");
+	//_backgroundMusic.loop = true;
+	//_backgroundMusic.play();
 	/* state-methods-end */
 	
 }

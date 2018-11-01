@@ -308,6 +308,18 @@
       "key": "blob_power",
       "url": "assets/images/specific_UI_and_others/blob_power.png",
       "overwrite": false
+    },
+    {
+      "type": "audio",
+      "key": "click11",
+      "urls": ["assets/audio/click1.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "Idle1",
+      "urls": ["assets/audio/Idle.ogg"],
+      "autoDecode": true
     }
   ],
   "level_only": [
@@ -458,7 +470,7 @@
     }
   ],
   "meta": {
-    "generated": "1541036464441",
+    "generated": "1541035476546",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

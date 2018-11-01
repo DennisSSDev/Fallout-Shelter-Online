@@ -34,6 +34,7 @@ class instructionButton extends Phaser.Button {
 		
 		this.instructionPanel = null;
 		this.instructionText = null;
+		this.clickSound = this.game.add.audio("click11");
 	}
 	
 	/* sprite-methods-begin */
@@ -47,7 +48,9 @@ class instructionButton extends Phaser.Button {
 	}
 
 	showHideInstructions(){
-		console.log(this.instructionPanel);
+		//console.log(this.instructionPanel);
+		
+		this.clickSound.play();
 		
 		if(this.instructionPanel.alpha == 0.0){
 			this.instructionPanel.alpha = 1.0;
