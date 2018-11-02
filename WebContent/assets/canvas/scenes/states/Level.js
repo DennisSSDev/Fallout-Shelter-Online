@@ -143,15 +143,63 @@ class Level extends Phaser.State {
 		
 		this.game.world.setBounds(-150, -150, 1400, 1100);
 		this.setupInput();
+		
+		var _group2 = this.add.group();
+		
+		var _Vault_Boy = this.add.sprite(600.0, 504.0, 'Vault_Boy', null, _group2);
+		_Vault_Boy.angle = -26.117541748949453;
+		_Vault_Boy.scale.setTo(2.0961280604718544, 2.0961280604718544);
+		
+		var _red_button2 = this.add.sprite(204.90742886809534, 24.0, 'red_button02', null, _group2);
+		_red_button2.scale.setTo(1.9951577312702693, 3.144001044249095);
+		
+		var _red_button2_3 = this.add.sprite(420.0, 401.75048226275095, 'red_button02', null, _group2);
+		_red_button2_3.scale.setTo(1.5077897443430743, 3.7041490425513484);
+		
+		var _red_button2_2 = this.add.sprite(80.0, 302.28078962484426, 'red_button02', null, _group2);
+		_red_button2_2.scale.setTo(1.7511579175693275, 2.9697536660369717);
+		
+		var _red_button2_1 = this.add.sprite(660.9631856051001, 120.0, 'red_button02', null, _group2);
+		_red_button2_1.scale.setTo(1.8867370080044426, 3.625216280924546);
+		
+		var _cursor_pointer3D_3 = this.add.sprite(600.0, 168.0, 'cursor_pointer3D', null, _group2);
+		_cursor_pointer3D_3.angle = 150.06533957655066;
+		_cursor_pointer3D_3.scale.setTo(3.37599971486704, 3.8200003270551264);
+		
+		var _cursor_pointer3D_2 = this.add.sprite(820.0, 48.0, 'cursor_pointer3D', null, _group2);
+		_cursor_pointer3D_2.angle = -10.574803337355705;
+		_cursor_pointer3D_2.scale.setTo(3.37599971486704, 3.8200003270551264);
+		
+		var _cursor_pointer3D_1 = this.add.sprite(80.0, 504.0, 'cursor_pointer3D', null, _group2);
+		_cursor_pointer3D_1.angle = 230.11120406146873;
+		_cursor_pointer3D_1.scale.setTo(3.37599971486704, 3.8200003270551264);
+		
+		var _cursor_pointer3D = this.add.sprite(700.0, 600.0, 'cursor_pointer3D', null, _group2);
+		_cursor_pointer3D.angle = 133.4873025856373;
+		_cursor_pointer3D.scale.setTo(3.37599971486704, 3.8200003270551264);
+		
+		var _text4 = this.add.text(240.0, 40.0, 'Special items:\n- Bomb: kill everything\n- Cart: Free upgrade\n- Block: stop enemies from reaching you\n- Paper Planes: increase rate of fire', {"font":"bold 20px Arial"}, _group2);
+		_text4.scale.setTo(0.7700840211142294, 0.7700840211142294);
+		
+		var _text3 = this.add.text(680.0, 144.0, 'Stats:\n- Gear: resources to spend on buildings\n- Power: sustain power of the vault\n- House: sustain housing for dwellers\n\nKeep your stats in check or your people will die', {"font":"bold 20px Arial"}, _group2);
+		_text3.scale.setTo(0.7281119083900458, 0.7281119083900458);
+		
+		var _text5 = this.add.text(100.0, 336.0, 'Enemies come from here\n\nTap on them to help the citizens', {"font":"bold 20px Arial"}, _group2);
+		_text5.scale.setTo(0.9391548357058136, 0.9391548357058136);
+		
+		var _text6 = this.add.text(440.0, 430.0, 'Your dwellers live here\n\nListen to their suggestions\n\nThey might help', {"font":"bold 20px Arial"}, _group2);
+		_text6.scale.setTo(0.8650090348910621, 0.8650090348910621);
+		
+		var _red_button3 = this.add.button(440.0, 303.8571434867789, 'red_button01', function(){_group2.alpha = 0; this.game.AI_MANAGER.beginRound(); _red_button3.kill()}, this, null, null, null, null, _group2);
+		_red_button3.scale.setTo(1.0, 1.326530607037762);
+		_red_button3.inputEnabled = true;
+		_red_button3.events.onInputUp.add(()=>{
+			_group2.alpha = 0; 
+			this.game.paused = false;
+		});
+		this.game.pause_label = _red_button3;
+		this.add.text(480.0, 325.0, 'Hide Window', {"font":"bold 20px Arial"}, _group2);
 	}
-	
-	/* state-methods-begin */
-	// -- user code here --
-	
-	setupTick(){
-		//init the ticks of the bars here
-	}
-	
 	
 	setupInput(){
 		this.cursors = this.game.input.keyboard.createCursorKeys();
@@ -182,7 +230,7 @@ class Level extends Phaser.State {
 	}
 	
 	update() {
-	
+		
 	    if (this.cursors.up.isDown)
 	    {
 	        this.game.camera.y -= 4;

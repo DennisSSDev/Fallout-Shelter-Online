@@ -46,9 +46,6 @@ class AI_manager extends Phaser.Sprite {
 		this.totalEnemyCount = startingOutCharacterCount;
 		game.time.events.loop(Phaser.Timer.QUARTER, this.ai_Update, this);
 		game.time.events.loop(40000, this.checkCitizenStatus, this);
-		setTimeout(()=>{
-			this.beginRound();
-		}, 2000);
 	}
 	ai_Update(){
 		this.aliveCitizens.forEach(

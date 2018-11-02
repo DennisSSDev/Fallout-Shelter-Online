@@ -4,8 +4,10 @@
     "className": "Level",
     "sceneWidth": 1024,
     "sceneHeight": 768,
-    "generateOnSave": false,
-    "enableStepping": false,
+    "generateOnSave": true,
+    "enableStepping": true,
+    "stepWidth": 20,
+    "stepHeight": 24,
     "lang": "JAVA_SCRIPT_6",
     "baseClass": "Phaser.State",
     "backgroundColor": [
@@ -376,6 +378,199 @@
               }
             ]
           }
+        },
+        {
+          "type": "group",
+          "id": "cdc011fd-1e05-4eec-bb87-e3def6ad4a1b",
+          "info": {
+            "editorName": "group2",
+            "setAll": [],
+            "children": [
+              {
+                "type": "image",
+                "id": "8da9f086-eeca-456d-ab3e-14a0618b9c07",
+                "asset": "12",
+                "info": {
+                  "editorName": "Vault_Boy",
+                  "x": 600,
+                  "y": 504,
+                  "rotation": -0.4558370960462462,
+                  "scale.x": 2.0961280604718544,
+                  "scale.y": 2.0961280604718544
+                }
+              },
+              {
+                "type": "image",
+                "id": "c25d04e0-afd4-401a-ab3f-bf75701e8e05",
+                "asset": "11",
+                "info": {
+                  "editorName": "red_button2",
+                  "x": 204.90742886809534,
+                  "y": 24,
+                  "scale.x": 1.9951577312702693,
+                  "scale.y": 3.144001044249095
+                }
+              },
+              {
+                "type": "image",
+                "id": "3cc9a557-acd5-4ff4-983f-ea6180c59c62",
+                "asset": "11",
+                "info": {
+                  "editorName": "red_button2_3",
+                  "x": 420,
+                  "y": 401.75048226275095,
+                  "scale.x": 1.5077897443430743,
+                  "scale.y": 3.7041490425513484
+                }
+              },
+              {
+                "type": "image",
+                "id": "556b796b-586d-4f42-b428-7b2d37318ac4",
+                "asset": "11",
+                "info": {
+                  "editorName": "red_button2_2",
+                  "x": 80,
+                  "y": 302.28078962484426,
+                  "scale.x": 1.7511579175693275,
+                  "scale.y": 2.9697536660369717
+                }
+              },
+              {
+                "type": "image",
+                "id": "08f2a5cd-87a0-461e-893c-1a57282d88ec",
+                "asset": "11",
+                "info": {
+                  "editorName": "red_button2_1",
+                  "x": 660.9631856051001,
+                  "y": 120,
+                  "scale.x": 1.8867370080044426,
+                  "scale.y": 3.625216280924546
+                }
+              },
+              {
+                "type": "image",
+                "id": "fddc0db1-2a5f-4f37-b57a-99064fa7a093",
+                "asset": "13",
+                "info": {
+                  "editorName": "cursor_pointer3D_3",
+                  "x": 600,
+                  "y": 168,
+                  "rotation": 2.6191342687341623,
+                  "scale.x": 3.37599971486704,
+                  "scale.y": 3.8200003270551264
+                }
+              },
+              {
+                "type": "image",
+                "id": "319ff7a3-18d4-46a6-9d30-1949beed77cb",
+                "asset": "13",
+                "info": {
+                  "editorName": "cursor_pointer3D_2",
+                  "x": 820,
+                  "y": 48,
+                  "rotation": -0.1845651359877417,
+                  "scale.x": 3.37599971486704,
+                  "scale.y": 3.8200003270551264
+                }
+              },
+              {
+                "type": "image",
+                "id": "963fc59d-f0ba-43ef-a23e-d7316ce1ea28",
+                "asset": "13",
+                "info": {
+                  "editorName": "cursor_pointer3D_1",
+                  "x": 80,
+                  "y": 504,
+                  "rotation": 4.0161981566011775,
+                  "scale.x": 3.37599971486704,
+                  "scale.y": 3.8200003270551264
+                }
+              },
+              {
+                "type": "image",
+                "id": "df36f12f-7b90-4d39-b633-5f356807d4af",
+                "asset": "13",
+                "info": {
+                  "editorName": "cursor_pointer3D",
+                  "x": 700,
+                  "y": 600,
+                  "rotation": 2.329792939725311,
+                  "scale.x": 3.37599971486704,
+                  "scale.y": 3.8200003270551264
+                }
+              },
+              {
+                "type": "text",
+                "id": "3f44d951-1b21-4953-a867-c8e535813a86",
+                "info": {
+                  "editorName": "text4",
+                  "x": 240,
+                  "y": 40,
+                  "scale.x": 0.7700840211142294,
+                  "scale.y": 0.7700840211142294,
+                  "text": "Special items:\r\n- Bomb: kill everything\r\n- Cart: Free upgrade\r\n- Block: stop enemies from reaching you\r\n- Paper Planes: increase rate of fire"
+                }
+              },
+              {
+                "type": "text",
+                "id": "e85b031f-83cc-45aa-8e85-79c9771e021f",
+                "info": {
+                  "editorName": "text3",
+                  "x": 680,
+                  "y": 144,
+                  "scale.x": 0.7281119083900458,
+                  "scale.y": 0.7281119083900458,
+                  "text": "Stats:\r\n- Gear: resources to spend on buildings\r\n- Power: sustain power of the vault\r\n- House: sustain housing for dwellers\r\n\r\nKeep your stats in check or your people will die"
+                }
+              },
+              {
+                "type": "text",
+                "id": "5cd0a4ad-0d0f-462f-851f-e69be15c0d91",
+                "info": {
+                  "editorName": "text5",
+                  "x": 100,
+                  "y": 336,
+                  "scale.x": 0.9391548357058136,
+                  "scale.y": 0.9391548357058136,
+                  "text": "Enemies come from here\r\n\r\nTap on them to help the citizens"
+                }
+              },
+              {
+                "type": "text",
+                "id": "a7fe7a92-6683-4c6e-903c-c6f47c284fcb",
+                "info": {
+                  "editorName": "text6",
+                  "x": 440,
+                  "y": 430,
+                  "scale.x": 0.8650090348910621,
+                  "scale.y": 0.8650090348910621,
+                  "text": "Your dwellers live here\r\n\r\nListen to their suggestions\r\n\r\nThey might help"
+                }
+              },
+              {
+                "type": "button",
+                "id": "20063a73-5a45-44d0-8825-bdccf7229d83",
+                "asset": "14",
+                "info": {
+                  "editorName": "red_button3",
+                  "x": 440,
+                  "y": 303.8571434867789,
+                  "scale.y": 1.326530607037762,
+                  "callback": "function(){_group2.alpha = 0; this.game.paused = false };"
+                }
+              },
+              {
+                "type": "text",
+                "id": "4764a17c-b31e-4fd0-a50f-e6ebb2eb3865",
+                "info": {
+                  "editorName": "text7",
+                  "x": 480,
+                  "y": 325,
+                  "text": "Begin Game"
+                }
+              }
+            ]
+          }
         }
       ]
     }
@@ -441,6 +636,21 @@
       "file": "WebContent/assets/pack.json",
       "section": "level",
       "asset": "red_button02"
+    },
+    "12": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level_only",
+      "asset": "Vault_Boy"
+    },
+    "13": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "cursor_pointer3D"
+    },
+    "14": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "red_button01"
     }
   },
   "prefab-table": {

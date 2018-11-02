@@ -479,10 +479,16 @@
       "key": "explosion01",
       "url": "assets/images/explosion01.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "Vault_Boy",
+      "url": "assets/images/Vault_Boy.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1541099785775",
+    "generated": "1541107279821",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
