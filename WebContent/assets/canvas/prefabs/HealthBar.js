@@ -1,3 +1,5 @@
+//the class for the bars of the stats
+//power bar, resource bar and housing bar derive from this
 class HealthBar extends Phaser.Group {
 	/**
 	 * HealthBar.
@@ -9,56 +11,48 @@ class HealthBar extends Phaser.Group {
 	 * @param {number} aPhysicsBodyType The physics body type to use when physics bodies are automatically added. See {@link #physicsBodyType} for values.
 	 */
 	constructor(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyType) {
-		
 		super(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyType);
 		this.status = .617;
 		var _blue_button = this.game.add.sprite(0.0, 0.0, 'blue_button13', null, this);
 		_blue_button.scale.setTo(0.7, 0.7);
-		
 		var _blue_button1 = this.game.add.sprite(2.0, 1.0, 'blue_button01', null, this);
 		_blue_button1.scale.setTo(0.6753336780964688, 0.6174401541810791);
-		
 		this.blueBar = _blue_button1;
 		this.tick = true;
 	}
-	
+	//decrease the bar amount
 	depleteBar(amount){
 		this.status -= amount;
 		this.clampScale();
 		this.blueBar.scale.setTo(this.status, .617);
 	}
-	
+	//increase the bar amount
 	increaseBar(amount){
 		this.status += amount;
 		this.clampScale();
 		this.blueBar.scale.setTo(this.status, .617);
 	}
-	
+	//hard set the bar value
 	setBar(val){
 		this.status = val;
 		this.clampScale();
 		this.blueBar.scale.setTo(this.status, .617);
 	}
-	
+	//set whether the bar willl tick
 	setTick(val){
 		this.tick = val;
 	}
-	
+	//on Update, over time decrease the bar by a small amount, as long as tick is enabled
 	update(){
 		if(this.tick){
 			this.depleteBar(.00005);
 		}
 	}
-	
+	//makes sure the bar doesnt go out of bounds
 	clampScale(){
 		if(this.status > .674)
 			this.status = .674;
 		else if(this.status < 0)
 			this.status = 0;
 	}
-	/* group-methods-begin */
-	// -- user code here --
-	/* group-methods-end */
 }
-/* --- end generated code --- */
-// -- user code here --
