@@ -74,6 +74,7 @@ class Menu extends Phaser.State {
 	//_backgroundMusic.play();
 	/* state-methods-end */
 	
+	
 }
 /* --- end generated code --- */
 	// -- user code here --

@@ -4,7 +4,7 @@
     "className": "Level",
     "sceneWidth": 1024,
     "sceneHeight": 768,
-    "generateOnSave": true,
+    "generateOnSave": false,
     "enableStepping": true,
     "stepWidth": 20,
     "stepHeight": 24,
