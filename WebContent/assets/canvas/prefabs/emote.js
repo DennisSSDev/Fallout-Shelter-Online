@@ -1,6 +1,6 @@
 //a simple emote class that will be spawned when the citizen decides that they need to emote
 //after 2 seconds of spawn, delete self
-class emote extends Phaser.Sprite {
+class Emote extends Phaser.Sprite {
 	/**
 	 * emote
 	 * @param {Phaser.Game} aGame A reference to the currently running game.

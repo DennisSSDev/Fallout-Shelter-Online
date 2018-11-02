@@ -72,7 +72,7 @@ class Room_Creator extends Phaser.Sprite {
 			//build new home and destroy the hover window
 			if(this.allowConstruct(this.game.resource_bar, .05)){
 				this.onClickSound.play();
-				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "housing_room");
+				this.room_type = new Room(this.game, this.obj_creator.x, this.obj_creator.y, "housing_room");
 				this.game.add.existing(this.room_type);
 				this.bringCharToFront();
 				this.game.latest_room = this.room_type;
@@ -90,7 +90,7 @@ class Room_Creator extends Phaser.Sprite {
 			//build new home and destroy the hoer window
 			if(this.allowConstruct(this.game.resource_bar, .05)){
 				this.onClickSound.play();
-				this.room_type = new room(this.game, this.obj_creator.x, this.obj_creator.y, "energy_room");
+				this.room_type = new Room(this.game, this.obj_creator.x, this.obj_creator.y, "energy_room");
 				this.game.add.existing(this.room_type);
 				this.game.latest_room = this.room_type;
 				this.game.all_rooms.push(this.room_type);

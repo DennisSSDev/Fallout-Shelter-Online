@@ -1,7 +1,7 @@
 //The monster that will be spawned in during the start of each round
 //move to the right until reached the very end of the screen, destroy self
 //if collide wih human, slow down a bit and move along
-class enemy extends Phaser.Sprite {
+class Enemy extends Phaser.Sprite {
 	/**
 	 * enemy
 	 * @param {Phaser.Game} aGame A reference to the currently running game.

@@ -14,7 +14,7 @@ class Menu extends Phaser.State {
 	constructor() {
 		
 		super();
-		
+		this.doOnce = true;
 	}
 	
 	init() {
@@ -26,9 +26,10 @@ class Menu extends Phaser.State {
 	}
 	
 	preload () {
-		
-		this.load.pack('level', 'assets/pack.json');
-		
+		if(this.doOnce){
+			this.load.pack('level', 'assets/pack.json');
+			this.doOnce = false;
+		}	
 	}
 	
 	create() {
@@ -50,7 +51,7 @@ class Menu extends Phaser.State {
 		var _t_instructions_panel = this.add.text(309.0, 177.0, 'You are in charge of leading a small group of \nsurvivors in an underground bunker. Your orders are as follows:\n\n• Construct new facilities to sustain your citizens\n• Use the tools at your disposal to help protect \n  your citizens against mutants\n• Improve the bunker\'s facilities using building \n  materials you collect from mutants\n• Do not allow all of your citizens to perish from\n  either lack of resources or mutant attacks\n\nFurther notes:\n\n• Your starting materials are limited - use them wisely!\n• Citizens will use up resources over time, the\n  facilities you build will help replenish them\n\nControls:\n\n• Mouse - interact with the bunker and use tools\n• Arrow Keys - pan up/down/left/right\n• A - zoom camera in, S - zoom camera out\n\nGood luck down there!', {"font":"bold 14px Arial"}, _instructionsPanel);
 		_t_instructions_panel.alpha = 0.0;
 		
-		var _b_instructions = new instructionButton(this.game, 815.0, 700.0);
+		var _b_instructions = new InstructionButton(this.game, 815.0, 700.0);
 		this.add.existing(_b_instructions);
 		
 		this.add.text(850.0, 710.0, 'Instructions	', {"font":"bold 20px Arial"});

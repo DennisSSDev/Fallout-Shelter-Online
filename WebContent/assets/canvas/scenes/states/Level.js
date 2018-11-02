@@ -9,6 +9,7 @@ class Level extends Phaser.State {
 		this.cursors = null;//keyboard keys stored here
 		this.keyEventScaleIn = null;//keys for scaling
 		this.keyEventScaleOut = null;
+		this.doOnce = true;
 	}
 	//setup canvas and physics
 	init() {
@@ -19,7 +20,11 @@ class Level extends Phaser.State {
 	}
 	//load assets for the main level
 	preload () {	
-		this.load.pack('level_only', 'assets/pack.json');
+		if(this.doOnce){
+			this.load.pack('level_only', 'assets/pack.json');
+			this.doOnce = false;
+		}
+		
 	}
 	//additional setup
 	create() {
@@ -98,16 +103,16 @@ class Level extends Phaser.State {
 		this.add.existing(_glassPanel_6);
 		
 		//special items
-		var _dragBomb = new dragItem(this.game, 170, 105);
+		var _dragBomb = new DragItem(this.game, 170, 105);
 		this.add.existing(_dragBomb);
 		
-		var _dragFreeUpgrade = new dragItem(this.game, 356, 105, 'shoppingBasket');
+		var _dragFreeUpgrade = new DragItem(this.game, 356, 105, 'shoppingBasket');
 		this.add.existing(_dragFreeUpgrade);
 		
-		var _dragRateOfFire = new dragItem(this.game, 542, 105, 'block');
+		var _dragRateOfFire = new DragItem(this.game, 542, 105, 'block');
 		this.add.existing(_dragRateOfFire);
 		
-		var _dragBarrier = new dragItem(this.game, 728, 105, 'increase_fire_rate');
+		var _dragBarrier = new DragItem(this.game, 728, 105, 'increase_fire_rate');
 		this.add.existing(_dragBarrier);
 		
 		//init ai manager and add it as a property to the game as it's going to be passed all around for validating AI data
@@ -228,7 +233,6 @@ class Level extends Phaser.State {
 	}
 	//update and respond to the arrow keys and move the camera accordingly
 	update() {
-		
 	    if (this.cursors.up.isDown)
 	    {
 	        this.game.camera.y -= 4;

@@ -1,7 +1,7 @@
 //the special item that you can drag in that would give you a significant boost or help out in a tough spot
 //mouse input required
 //has all the possible options of draggable items
-class dragItem extends Phaser.Sprite {
+class DragItem extends Phaser.Sprite {
 	/**
 	 * dragItem
 	 * @param {Phaser.Game} aGame A reference to the currently running game.

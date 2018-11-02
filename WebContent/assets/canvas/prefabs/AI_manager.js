@@ -145,7 +145,7 @@ class AI_manager extends Phaser.Sprite {
 		for(let i = 0; i < amount; i++)
 		{
 			randXpos = this.getRandomInt(-350, 80);
-			this.aliveEnemies.push(new enemy(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], this.monsterTypes[this.getRandomInt(0,4)], null, this.getRandomInt(3500, 6500), this.round + this.getRandomInt(1, 7), this.round));//randomize stats
+			this.aliveEnemies.push(new Enemy(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], this.monsterTypes[this.getRandomInt(0,4)], null, this.getRandomInt(3500, 6500), this.round + this.getRandomInt(1, 7), this.round));//randomize stats
 		}
 		this.aliveEnemies.forEach(c => {this.game.add.existing(c)});
 	}
@@ -164,7 +164,7 @@ class AI_manager extends Phaser.Sprite {
 		{
 			randSkin = this.getRandomInt(0, 4);
 			randXpos = this.getRandomInt(401, 1199);
-			this.aliveCitizens.push(new citizen(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], this.citizenTypes[this.getRandomInt(0,4)]));
+			this.aliveCitizens.push(new Citizen(this.game, randXpos, this.validFloors[this.getRandomValidFloor()], this.citizenTypes[this.getRandomInt(0,4)]));
 		}
 		this.aliveCitizens.forEach(c => {this.game.add.existing(c); this.weapons.push(c.weapon);});
 	}

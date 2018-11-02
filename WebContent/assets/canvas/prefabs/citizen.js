@@ -4,7 +4,7 @@
 //has multiple behavior states for walking around
 //has animation states
 //has a weapon to protect itself
-class citizen extends Phaser.Sprite {
+class Citizen extends Phaser.Sprite {
 	/**
 	 * citizen
 	 * @param {Phaser.Game} aGame A reference to the currently running game.
@@ -107,7 +107,7 @@ class citizen extends Phaser.Sprite {
 						key_ = 'blob_home';
 					else
 						key_ = 'blob_power';
-					this.personalEmote = new emote(this.game, this.x+50, this.y-30, key_, null, this);
+					this.personalEmote = new Emote(this.game, this.x+50, this.y-30, key_, null, this);
 					this.game.add.existing(this.personalEmote);	
 				}
 				else if(this.spawnedEmote && this.personalEmote == null){

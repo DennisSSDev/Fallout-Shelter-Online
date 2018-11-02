@@ -1,5 +1,5 @@
 //the room class that stores the stats that will be accounted to the power and housing bars
-class room extends Phaser.Sprite {
+class Room extends Phaser.Sprite {
 	/**
 	 * room
 	 * @param {Phaser.Game} aGame A reference to the currently running game.
@@ -23,7 +23,7 @@ class room extends Phaser.Sprite {
 		this.onHoverSound = this.game.add.audio("Hover_Build");
 		this.onClick = this.game.add.audio("Hover_Click");
 	}
-	//if there are enough resources, upgrade the the stats
+	//if there are enough resources, upgrade the stats
 	upgrade(){
 		this.stats += 5;
 	}
