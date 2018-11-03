@@ -54,6 +54,17 @@
           }
         },
         {
+          "type": "text",
+          "id": "583c986c-9240-4b08-889a-158664f7b70d",
+          "info": {
+            "editorName": "t_title",
+            "x": 250,
+            "y": 210,
+            "text": "Bunker Defender",
+            "style.fontSize": 70
+          }
+        },
+        {
           "type": "group",
           "id": "544c8005-425e-46c9-8ff8-0db5889496a5",
           "info": {
@@ -178,6 +189,16 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "type": "text",
+          "id": "258e6de9-5751-4c1f-b83e-fe556fd9adec",
+          "info": {
+            "editorName": "t_byline",
+            "x": 10,
+            "y": 740,
+            "text": "A game by Dennis Slavinsky and Jordan Machalek"
           }
         }
       ]
