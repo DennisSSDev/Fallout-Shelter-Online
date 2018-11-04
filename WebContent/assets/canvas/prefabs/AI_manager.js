@@ -45,6 +45,7 @@ class AI_manager extends Phaser.Sprite {
 		//all of the bullets that are being exerted by the weapons array
 		this.allBullets = [];
 		this.stateRandomizer = -1;
+		this.gameOver = false;
 		//initialize the first few citizens
 		this.spawnCitizen(startingOutCharacterCount);
 		//initialize the total enemy count 
@@ -90,26 +91,28 @@ class AI_manager extends Phaser.Sprite {
 	//if the bars are average, don't do anything
 	//if the bars are doing poorly or below average, kill off one random human :)
 	checkCitizenStatus(){
-		if(this.game.power_bar.status < .224 || this.game.housing_bar.status < .224){
-			//pick an random citizen and kill him
-			let pick_citizen = this.getRandomInt(0, this.aliveCitizens.length);
-			this.aliveCitizens[pick_citizen].kill();
-			this.citizenDeathSound.play();
-			this.aliveCitizens.splice(pick_citizen, 1);
-		}
-		else if(this.game.power_bar.status >= .400 && this.game.housing_bar.status >= .400){
-			//add a new citizen or increase the cost of a citizen, but add skill to him
-			this.newMemberSound.play();
-			if(this.aliveCitizens.length < 7){
-				this.spawnCitizen(1);
-			}
-			else{
+		if(!this.gameOver){
+			if(this.game.power_bar.status < .224 || this.game.housing_bar.status < .224){
+				//pick an random citizen and kill him
 				let pick_citizen = this.getRandomInt(0, this.aliveCitizens.length);
-				this.aliveCitizens[pick_citizen].cost += this.getRandomInt(1,6);
-				this.aliveCitizens[pick_citizen].skill += this.getRandomInt(1,9);
-			}	
+				this.aliveCitizens[pick_citizen].kill();
+				this.citizenDeathSound.play();
+				this.aliveCitizens.splice(pick_citizen, 1);
+			}
+			else if(this.game.power_bar.status >= .400 && this.game.housing_bar.status >= .400){
+				//add a new citizen or increase the cost of a citizen, but add skill to him
+				this.newMemberSound.play();
+				if(this.aliveCitizens.length < 7){
+					this.spawnCitizen(1);
+				}
+				else{
+					let pick_citizen = this.getRandomInt(0, this.aliveCitizens.length);
+					this.aliveCitizens[pick_citizen].cost += this.getRandomInt(1,6);
+					this.aliveCitizens[pick_citizen].skill += this.getRandomInt(1,9);
+				}	
+			}
+			this.game.totalPlayerCount.updateCount(this.aliveCitizens.length);
 		}
-		this.game.totalPlayerCount.updateCount(this.aliveCitizens.length);
 	}
 	//call this everytime the player manages to sustain an attack
 	//increase the round count
@@ -195,46 +198,49 @@ class AI_manager extends Phaser.Sprite {
 	//otherwise continue to calculate collisions between citizens and monsters and bullets agains monsters
 	//update the status bars
 	update(){
-		this.aliveEnemies.forEach(e => {//if out of bounds -> destroy
-			if(e != null){
-				if(e.x > 1200){
-					e.x = -100;
-					e.kill();
-					this.totalEnemyCount--;
-					e = null;
+		if(!this.gameOver){
+			this.aliveEnemies.forEach(e => {//if out of bounds -> destroy
+				if(e != null){
+					if(e.x > 1200){
+						e.x = -100;
+						e.kill();
+						this.totalEnemyCount--;
+						e = null;
+					}
 				}
+			});	
+			if(this.totalEnemyCount <= 0){//done with the round heres
+				this.requestKillAll = false;
+				this.game.alertMessage.alpha = 0;
+				this.aliveCitizens.forEach(c => {
+					c.CURRENT_STATE = c.AI_STATES.IDLE;
+					c.executing_command = false;
+				});
+				this.game.background_music.fadeIn(2000);
+				this.battleMusic.fadeOut(2500);
+				this.beginRound();
 			}
-		});	
-		if(this.totalEnemyCount <= 0){//done with the round heres
-			this.requestKillAll = false;
-			this.game.alertMessage.alpha = 0;
-			this.aliveCitizens.forEach(c => {
-				c.CURRENT_STATE = c.AI_STATES.IDLE;
-				c.executing_command = false;
-			});
-			this.game.background_music.fadeIn(2000);
-			this.battleMusic.fadeOut(2500);
-			this.beginRound();
+			else{//calculate collisions here
+				this.allBullets = [];
+				this.weapons.forEach(c => {
+					this.allBullets = this.allBullets.concat(c.bullets);
+				});
+				this.game.physics.arcade.collide(this.aliveCitizens, this.aliveEnemies, this.collisionCallback, null, this);
+				this.game.physics.arcade.collide(this.allBullets, this.aliveEnemies, this.bulletCollisionCallback, null, this);
+				if(this.game.globalBlocker != undefined)
+					this.game.physics.arcade.collide(this.aliveEnemies, this.game.globalBlocker);
+			}
+			if(this.aliveCitizens.length <= 0){//if you don't have anymore citizens -> game over
+				this.gameOver = true;
+				this.game.gameOverScreen.alpha = 1;
+				this.game.world.bringToTop(this.game.gameOverScreen);
+				this.game.gameOverScreen.children[0].input.enabled = true;
+				this.game.gameOverScreen.x = this.game.camera.x;
+				this.game.gameOverScreen.y = this.game.camera.y;
+			}
+			
+			this.calculateBars();//upate the numbers on the bars
 		}
-		else{//calculate collisions here
-			this.allBullets = [];
-			this.weapons.forEach(c => {
-				this.allBullets = this.allBullets.concat(c.bullets);
-			});
-			this.game.physics.arcade.collide(this.aliveCitizens, this.aliveEnemies, this.collisionCallback, null, this);
-			this.game.physics.arcade.collide(this.allBullets, this.aliveEnemies, this.bulletCollisionCallback, null, this);
-			if(this.game.globalBlocker != undefined)
-				this.game.physics.arcade.collide(this.aliveEnemies, this.game.globalBlocker);
-		}
-		if(this.aliveCitizens.length <= 0){//if you don't have anymore citizens -> game over
-			this.game.gameOverScreen.alpha = 1;
-			this.game.world.bringToTop(this.game.gameOverScreen);
-			this.game.gameOverScreen.children[0].input.enabled = true;
-			this.game.gameOverScreen.x = this.game.camera.x;
-			this.game.gameOverScreen.y = this.game.camera.y;
-		}
-		
-		this.calculateBars();//upate the numbers on the bars
 	}
 	//function that calculates the total contribution between the rooms and citizens
 	//add or remove bar points accordingly
