@@ -95,7 +95,10 @@ class AI_manager extends Phaser.Sprite {
 			if(this.game.power_bar.status < .224 || this.game.housing_bar.status < .224){
 				//pick an random citizen and kill him
 				let pick_citizen = this.getRandomInt(0, this.aliveCitizens.length);
-				this.aliveCitizens[pick_citizen].kill();
+				let weaponIndex = this.weapons.indexOf(this.aliveCitizens[pick_citizen].weapon);
+				this.weapons.splice(weaponIndex, 1);
+				//this.aliveCitizens[pick_citizen].weapon = null;
+				this.aliveCitizens[pick_citizen].CURRENT_STATE = 4;
 				this.citizenDeathSound.play();
 				this.aliveCitizens.splice(pick_citizen, 1);
 			}
@@ -295,7 +298,7 @@ class AI_manager extends Phaser.Sprite {
 	collisionCallback(c,e){//c for citizen, e for enemy
 		c.CURRENT_STATE = c.AI_STATES.DEAD;
 		let index = this.aliveCitizens.indexOf(c);
-		c.kill();
+		c.CURRENT_STATE = 4;
 		this.citizenDeathSound.play();
 		this.aliveCitizens.splice(index, 1);
 		e.body.velocity.x = 0;
